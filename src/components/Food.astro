@@ -4,7 +4,7 @@ interface Props {
 }
 const { messages } = Astro.props;
 const food = messages.food;
-const foodImg = '/gallery/damnoen-saduak-floating-market-5.jpg';
+const foodImg = '/gallery/rajabhakti-park-5.jpg';
 ---
 
 <section id="food" class="py-20 bg-teak text-ivory">
@@ -13,8 +13,8 @@ const foodImg = '/gallery/damnoen-saduak-floating-market-5.jpg';
     <h2 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-2">{food.heading}</h2>
     <p class="mt-4 max-w-2xl text-ivory/80">{food.lead}</p>
 
-    <div class="grid md:grid-cols-2 gap-6 mt-10">
-      <div class="space-y-4">
+    <div class="mt-10">
+      <div class="grid md:grid-cols-2 gap-4">
         {food.dishes.map((d) => (
           <div class="flex gap-4 rounded-xl bg-teakDeep/60 border border-gold/20 p-4">
             <span class="font-display text-goldBright text-xl mt-0.5">{d.tag}</span>
@@ -27,9 +27,6 @@ const foodImg = '/gallery/damnoen-saduak-floating-market-5.jpg';
             </div>
           </div>
         ))}
-      </div>
-      <div class="photo-frame rounded-2xl min-h-[280px]">
-        <img src={foodImg} alt={food.heading} class="w-full h-full object-cover" />
       </div>
     </div>
 

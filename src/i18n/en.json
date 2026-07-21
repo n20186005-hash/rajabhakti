@@ -91,7 +91,7 @@
   "history": {
     "label": "— 03 · History & Legacy —",
     "heading": "The History & Legacy of the Kings",
-    "intro": "The park honors seven notable Thai kings who made significant contributions to the nation.",
+    "intro": "Thailand has a centuries-old history of monarchy, spanning dozens of kings. These seven kings (from the 13th to the 20th century) are known as \"The Great\" or key leaders who made a decisive turning point in the nation's destiny. The park chose them to establish a memorial corridor that runs through the historical and cultural context of Siam.",
     "blocks": [
       {
         "title": "Sukhothai Period",
@@ -114,46 +114,79 @@
       "title": "Did you know?",
       "text": "Casting of the statues and construction of the multi-purpose plaza took just 10 months, from November 2014 to August 2015."
     },
-    "kingsTitle": "The Seven Great Kings",
+    "kingsTitle": "Legends of the Seven Great Kings",
     "kings": [
       {
         "name": "King Ram Khamhaeng the Great",
-        "period": "Sukhothai Period",
-        "desc": "Created the Thai alphabet and established Buddhism as the state religion."
+        "period": "Sukhothai Dynasty (reigned 1279–1298)",
+        "desc": "Historical Contribution: Created the Thai alphabet and established Theravada Buddhism as the state religion.",
+        "storyTitle": "[Ringing the Bell of Justice]",
+        "story": "Legend has it that King Ram Khamhaeng hung a large bell in front of the palace gates. Any commoner who suffered an injustice could go and ring the bell, and the King would personally come out to pass judgment. He created a \"father-and-son\" relationship between the monarch and the people, and is revered as the founder of Thailand's cultural and legal system."
       },
       {
         "name": "King Naresuan the Great",
-        "period": "Ayutthaya Period",
-        "desc": "Declared independence for Ayutthaya and expanded the kingdom's territory."
+        "period": "Ayutthaya Dynasty (reigned 1590–1605)",
+        "desc": "Historical Contribution: Declared Ayutthaya's independence from Burmese rule and established the national territory.",
+        "storyTitle": "[The Duel on Elephant Back]",
+        "story": "During the Battle of Suphan Buri in 1593, King Naresuan, riding his war elephant, challenged the Burmese Crown Prince to a single combat while surrounded by enemy forces. This earth-shattering elephant duel (Yutthagahthi) ultimately ended in Naresuan's victory. This day (January 18) is now designated as Thailand's \"Royal Thai Armed Forces Day\"."
       },
       {
         "name": "King Narai the Great",
-        "period": "Ayutthaya Period",
-        "desc": "Fostered immense diplomatic and commercial relations with European nations."
+        "period": "Ayutthaya Dynasty (reigned 1656–1688)",
+        "desc": "Historical Contribution: The peak of diplomacy and cultural openness, initiating the collision of Eastern and Western civilizations.",
+        "storyTitle": "[Siam on the World Stage]",
+        "story": "King Narai is one of the most diplomatically visionary monarchs in Siamese history. He sent envoys to the Palace of Versailles in France to meet Louis XIV, and welcomed European merchants, missionaries, and astronomers to the Ayutthaya court. During his reign, Ayutthaya became one of the most prosperous international metropolises in the world."
       },
       {
         "name": "King Taksin the Great",
-        "period": "Thonburi Period",
-        "desc": "Reunified the kingdom after the fall of Ayutthaya."
+        "period": "Thonburi Dynasty (reigned 1767–1782)",
+        "desc": "Historical Contribution: Reorganized the country and rebuilt the nation in the desperate situation after the fall of Ayutthaya.",
+        "storyTitle": "[Burning the Boats and the Five Hundred Warriors]",
+        "story": "After Ayutthaya was burned down in 1767, Taksin, who was of Chinese descent, broke out of the siege. Leading a force of only a few hundred men, he quickly swept away the separatist forces, expelled foreign enemies, and established the Thonburi Dynasty. He is the most legendary god of war-level monarch in Thai history."
       },
       {
-        "name": "King Rama I (Phutthayotfa Chulalok)",
-        "period": "Rattanakosin Period",
-        "desc": "Founded the Chakri Dynasty and established Bangkok as the capital."
+        "name": "King Rama I",
+        "period": "Chakri Dynasty (reigned 1782–1809)",
+        "desc": "Historical Contribution: Established the Chakri (Bangkok) Dynasty and built Bangkok and the Temple of the Emerald Buddha.",
+        "storyTitle": "[The Founder of Bangkok]",
+        "story": "King Rama I moved the capital to Bangkok on the east bank of the Chao Phraya River, presided over the construction of the magnificent Grand Palace, and enshrined the national treasure, the \"Emerald Buddha\", in the Temple of the Emerald Buddha. He not only restored Siam's rules and regulations but also personally compiled the famous \"Three Seals Law\"."
       },
       {
-        "name": "King Rama IV (Mongkut)",
-        "period": "Rattanakosin Period",
-        "desc": "Initiated the modernization of Siam and embraced Western science."
+        "name": "King Mongkut (Rama IV)",
+        "period": "Chakri Dynasty (reigned 1851–1868)",
+        "desc": "Historical Contribution: The father of Siamese science, he took the lead in initiating Western-oriented modernization reforms.",
+        "storyTitle": "[The Eclipse Prediction and the Light of Science]",
+        "story": "King Mongkut was well-versed in astronomy, Latin, and Western science. In 1868, he accurately calculated the time and place of a total solar eclipse through astronomy, and invited Western scientists and diplomats to travel to Prachuap Khiri Khan to observe the phenomenon together, breaking ancient superstitions with science."
       },
       {
-        "name": "King Rama V (Chulalongkorn)",
-        "period": "Rattanakosin Period",
-        "desc": "Abolished slavery, modernized the government, and preserved Thailand's independence."
+        "name": "King Chulalongkorn (Rama V)",
+        "period": "Chakri Dynasty (reigned 1868–1910)",
+        "desc": "Historical Contribution: Abolished slavery, implemented comprehensive modernization, and preserved national independence amidst surrounding colonial powers.",
+        "storyTitle": "[Diplomacy and Reform of Wisdom]",
+        "story": "At the critical moment when British and French colonists were encroaching on Southeast Asia at the end of the 19th century, King Rama V made Siam the only country in Southeast Asia to maintain its independence through the construction of railways, the establishment of a modern government, the abolition of slavery, and masterful shuttle diplomacy in Europe."
       }
     ]
-  },
-  "guide": {
+    },
+    "artistry": {
+      "label": "— 03.5 · Art & Sculpture Engineering —",
+      "heading": "A Magnificent Bronze Casting Miracle",
+      "intro": "Rajabhakti Park is not just a monument, but also the crystallization of Thailand's top contemporary metal casting and artistic craftsmanship.",
+      "items": [
+        {
+          "title": "Top Art Team",
+          "desc": "The statues were designed by the Fine Arts Department of the Ministry of Culture and jointly built by 7 top craft foundries across the country."
+        },
+        {
+          "title": "Ultimate Proportions and Details",
+          "desc": "Each statue is about 13.9 meters high and cast from tons of bronze. The kings' facial expressions, clothing textures, and sword accessories are all strictly verified by court documents and painting relics from various historical periods."
+        },
+        {
+          "title": "Record-breaking Construction Period",
+          "desc": "From design, mold making, bronze casting to on-site hoisting and assembly, the entire park was completed in just 10 months."
+        }
+      ]
+    },
+    "guide": {
     "label": "— 04 · Visitor Guide —",
     "heading": "Rajabhakti Park Visitor Guide",
     "lead": "Essential information to help you plan your visit to this historical monument.",
@@ -211,28 +244,49 @@
           "desc": "Suan Son Pradiphat Railway Halt is situated 790 metres east of Rajabhakti Park."
         },
         {
+          "title": "Airport",
+          "desc": "You can take a taxi or airport bus from Hua Hin Airport. The journey takes about 20-30 minutes."
+        },
+        {
           "title": "Tour packages",
           "desc": "Many Hua Hin day tours include a stop at Rajabhakti Park."
         }
       ]
     },
     "faqTitle": "Frequently asked questions",
+    "photoTips": {
+      "tag": "📸 Photography Guide",
+      "tips": [
+        {
+          "title": "Panoramic View",
+          "desc": "Step back about 50 meters from the center of the main plaza to capture all seven bronze statues of the kings along with the Hua Hin mountains in the background."
+        },
+        {
+          "title": "Golden Hour",
+          "desc": "Between 17:00 and 18:00, the setting sun shines obliquely on the bronze sculptures, giving them a highly textured golden luster."
+        }
+      ]
+    },
+    "audioGuide": {
+      "label": "🎧 Free Audio Guide",
+      "desc": "You can stroll through the memorial plaza while reading/listening to the legendary stories of the seven kings above."
+    },
     "faqs": [
       {
         "q": "Is there an entrance fee?",
         "a": "No, entry to the park is completely free for both Thai nationals and foreigners."
       },
       {
-        "q": "Is there shade from the sun?",
-        "a": "The main plaza is very open and exposed to the sun. It is highly recommended to bring an umbrella, hat, and sunscreen, especially if visiting midday."
+        "q": "Can I fly a drone?",
+        "a": "No. Because the park is managed by the Royal Thai Army and is adjacent to a military base, unauthorized drone flights are strictly prohibited in the entire area."
+      },
+      {
+        "q": "Are there any special requirements for posture and etiquette during the visit?",
+        "a": "Please do not make frivolous poses (such as imitating the kings' movements, jumping, or making funny gestures) in front of the statues. Paying respects or quietly admiring them is the most decent expression."
       },
       {
         "q": "Are wheelchairs and strollers allowed?",
         "a": "Yes, the park is very spacious and accessible with ramps."
-      },
-      {
-        "q": "Can I fly a drone?",
-        "a": "Flying drones is strictly prohibited without prior official permission from the military authorities."
       }
     ],
     "etiquette": {
@@ -407,9 +461,9 @@
   "footer": {
     "brand": {
       "name": "Rajabhakti Park",
-      "tagline": "The Royal Legacy of Thailand"
+      "tagline": "Thailand's Royal Heritage"
     },
-    "about": "A non-profit, educational travel-information website dedicated to accurate, complete and respectful presentation of Thai history.",
+    "about": "This site is dedicated to disseminating Southeast Asian history and world cultural heritage through digital means. All historical data has been cross-referenced with the National Archives of Thailand and public documents.",
     "navTitle": "Menu",
     "navItems": [
       {

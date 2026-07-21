@@ -5,8 +5,8 @@ interface Props {
 const { messages } = Astro.props;
 const guide = messages.guide;
 const guideImgs = [
-  '/gallery/damnoen-saduak-floating-market-2.jpg',
-  '/gallery/damnoen-saduak-floating-market-3.jpg',
+  '/gallery/rajabhakti-park-2.jpg',
+  '/gallery/rajabhakti-park-3.jpg',
 ];
 ---
 
@@ -25,6 +25,17 @@ const guideImgs = [
         <p class="mt-2 text-ink/80 text-sm leading-relaxed">
           {guide.etiquette.text}
         </p>
+      </div>
+    )}
+
+    <!-- Audio Guide -->
+    {guide.audioGuide && (
+      <div class="mt-6 rounded-xl bg-gold/15 border border-gold/30 p-5 max-w-4xl flex items-start gap-4">
+        <div class="text-2xl mt-1">🎧</div>
+        <div>
+          <h4 class="font-display text-teak text-lg font-semibold">{guide.audioGuide.label}</h4>
+          <p class="text-sm text-ink/80 mt-1">{guide.audioGuide.desc}</p>
+        </div>
       </div>
     )}
 
@@ -72,20 +83,36 @@ const guideImgs = [
       </div>
     </div>
 
-    <!-- Educational Itineraries -->
-    {guide.itineraries && (
-      <div class="mt-14 max-w-4xl">
-        <h3 class="font-display text-2xl text-teak mb-5">{guide.itinerariesTitle}</h3>
-        <div class="grid md:grid-cols-2 gap-5">
-          {guide.itineraries.map((it) => (
-            <div class="rounded-xl border border-gold/30 bg-white/60 p-5 hover:border-gold/60 transition-colors">
-              <h4 class="font-semibold text-teak mb-2">{it.title}</h4>
-              <p class="text-sm text-ink/75 leading-relaxed">{it.desc}</p>
-            </div>
-          ))}
+    <!-- Educational Itineraries & Photo Tips -->
+    <div class="grid md:grid-cols-2 gap-8 mt-14 max-w-5xl">
+      {guide.itineraries && (
+        <div>
+          <h3 class="font-display text-2xl text-teak mb-5">{guide.itinerariesTitle}</h3>
+          <div class="space-y-4">
+            {guide.itineraries.map((it: any) => (
+              <div class="rounded-xl border border-gold/30 bg-white/60 p-5 hover:border-gold/60 transition-colors">
+                <h4 class="font-semibold text-teak mb-2">{it.title}</h4>
+                <p class="text-sm text-ink/75 leading-relaxed">{it.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    )}
+      )}
+
+      {guide.photoTips && (
+        <div>
+          <h3 class="font-display text-2xl text-teak mb-5">{guide.photoTips.tag}</h3>
+          <div class="space-y-4">
+            {guide.photoTips.tips.map((tip: any) => (
+              <div class="rounded-xl border border-teak/20 bg-teak/5 p-5">
+                <h4 class="font-semibold text-teak mb-2">{tip.title}</h4>
+                <p class="text-sm text-ink/75 leading-relaxed">{tip.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
 
     <!-- FAQ -->
     <div class="mt-14 max-w-3xl">
