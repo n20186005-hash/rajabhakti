@@ -1,0 +1,567 @@
+{
+  "meta": {
+    "title": "Rajabhakti Park — The Complete Visitor Guide",
+    "description": "Rajabhakti Park, Hua Hin — your complete guide: history, royal statues, visitor tips and real reviews. Experience the grandeur of Thailand's royal history."
+  },
+  "common": {
+    "siteName": "Rajabhakti Park",
+    "changeLanguage": "Change language",
+    "toggleTheme": "Toggle theme",
+    "viewOnMaps": "View on Google Maps"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "history": "History",
+    "guide": "Guide",
+    "food": "Facilities",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "map": "Map"
+  },
+  "hero": {
+    "eyebrow": "— 01 · The Royal Legacy of Thailand —",
+    "titleMain": "Rajabhakti Park",
+    "titleAccent": "Park",
+    "subtitle": "A historically themed park honouring past Thai kings from the Sukhothai period to the current royal house of Chakri, built by the Royal Thai Army.",
+    "cta1": "Start the journey",
+    "cta2": "Explore the grounds →",
+    "rating": "4.4",
+    "reviewCount": "11,056",
+    "liveWeather": "Live weather",
+    "liveSunset": "Sunset",
+    "loading": "Loading live data from the actual location…",
+    "weatherError": "Live weather data is unavailable right now",
+    "plannerEyebrow": "— The Light of the Day —",
+    "plannerTitle": "Sunset & Blue Hour",
+    "plannerNote": "Calculated from the park's real coordinates so you can plan photography and visits precisely",
+    "goldenHourLabel": "Golden hour",
+    "crowdWarningLabel": "Crowd peak warning",
+    "crowdAfter": "After 10:00",
+    "arriveLabel": "Suggested arrival time",
+    "blueHourLabel": "Blue Hour",
+    "lightCaption": "Soft light, perfect for photography of the royal statues",
+    "viewLocation": "View on Google Maps ↗"
+  },
+  "about": {
+    "label": "— 02 · About the Park —",
+    "heading": "About Rajabhakti Park",
+    "lead": "A monumental historical park in Hua Hin, created to honor the great kings of Thailand.",
+    "paragraph1": "Rajabhakti Park is a historically themed park honouring past Thai kings. It is located in Hua Hin, Prachuap Khiri Khan Province, Thailand. The park was built by the Royal Thai Army with funds donated by the public and private sectors.",
+    "paragraph2": "King Bhumibol Adulyadej gave the historical park the name 'Rajabhakti Park', which means 'the park that has been built with people's loyalty to the monarchs'.",
+    "quote": "Rajabhakti Park stands as a testament to the enduring reverence the Thai people hold for their monarchs.",
+    "quoteAuthor": "— Foundation statement",
+    "stats": [
+      {
+        "value": "222 rai",
+        "label": "Total area"
+      },
+      {
+        "value": "7 statues",
+        "label": "Bronze statues of past kings"
+      },
+      {
+        "value": "13.9 m",
+        "label": "Average height of each statue"
+      }
+    ],
+    "highlights": [
+      {
+        "tag": "01",
+        "title": "Royal Statues",
+        "desc": "Seven magnificent bronze statues of Thailand's greatest kings"
+      },
+      {
+        "tag": "02",
+        "title": "Plaza",
+        "desc": "A vast ceremonial plaza used for important national events"
+      },
+      {
+        "tag": "03",
+        "title": "Museum",
+        "desc": "Educational exhibits about the history of the Thai monarchy"
+      }
+    ],
+    "editorTip": {
+      "tag": "Editor's tip",
+      "text": "Visit in the late afternoon (16:00–18:00) to avoid the midday heat and enjoy beautiful sunset views.",
+      "ctaLabel": "See the guide"
+    }
+  },
+  "history": {
+    "label": "— 03 · History & Legacy —",
+    "heading": "The History & Legacy of the Kings",
+    "intro": "The park honors seven notable Thai kings who made significant contributions to the nation.",
+    "blocks": [
+      {
+        "title": "Sukhothai Period",
+        "text": "King Ram Khamhaeng the Great (reigned 1279-1298) is honored for his creation of the Thai alphabet and establishing Buddhism as the state religion."
+      },
+      {
+        "title": "Ayutthaya Period",
+        "text": "King Naresuan the Great (1590-1605) and King Narai the Great (1656-1688) are celebrated for defending the kingdom and expanding its diplomatic and commercial relations."
+      },
+      {
+        "title": "Thonburi and Rattanakosin Periods",
+        "text": "King Taksin the Great (1767-1782) reunified the kingdom. From the Chakri dynasty, King Rama I (1782-1809), King Mongkut (1851-1868), and King Chulalongkorn (1868-1910) are honored for their roles in modernizing Thailand and preserving its independence."
+      }
+    ],
+    "legend": {
+      "title": "The Meaning of Rajabhakti",
+      "text": "The name 'Rajabhakti' was graciously bestowed by King Bhumibol Adulyadej (Rama IX), signifying the profound loyalty and devotion of the people to the monarchy."
+    },
+    "didYouKnow": {
+      "title": "Did you know?",
+      "text": "Casting of the statues and construction of the multi-purpose plaza took just 10 months, from November 2014 to August 2015."
+    },
+    "kingsTitle": "The Seven Great Kings",
+    "kings": [
+      {
+        "name": "King Ram Khamhaeng the Great",
+        "period": "Sukhothai Period",
+        "desc": "Created the Thai alphabet and established Buddhism as the state religion."
+      },
+      {
+        "name": "King Naresuan the Great",
+        "period": "Ayutthaya Period",
+        "desc": "Declared independence for Ayutthaya and expanded the kingdom's territory."
+      },
+      {
+        "name": "King Narai the Great",
+        "period": "Ayutthaya Period",
+        "desc": "Fostered immense diplomatic and commercial relations with European nations."
+      },
+      {
+        "name": "King Taksin the Great",
+        "period": "Thonburi Period",
+        "desc": "Reunified the kingdom after the fall of Ayutthaya."
+      },
+      {
+        "name": "King Rama I (Phutthayotfa Chulalok)",
+        "period": "Rattanakosin Period",
+        "desc": "Founded the Chakri Dynasty and established Bangkok as the capital."
+      },
+      {
+        "name": "King Rama IV (Mongkut)",
+        "period": "Rattanakosin Period",
+        "desc": "Initiated the modernization of Siam and embraced Western science."
+      },
+      {
+        "name": "King Rama V (Chulalongkorn)",
+        "period": "Rattanakosin Period",
+        "desc": "Abolished slavery, modernized the government, and preserved Thailand's independence."
+      }
+    ]
+  },
+  "guide": {
+    "label": "— 04 · Visitor Guide —",
+    "heading": "Rajabhakti Park Visitor Guide",
+    "lead": "Essential information to help you plan your visit to this historical monument.",
+    "hours": {
+      "tag": "01",
+      "title": "Opening hours",
+      "time": "Daily 08:00 – 18:00",
+      "items": [
+        {
+          "label": "Best time to visit",
+          "value": "16:00 – 18:00 (Sunset)"
+        },
+        {
+          "label": "Museum hours",
+          "value": "09:00 – 16:00"
+        }
+      ]
+    },
+    "fees": {
+      "tag": "02",
+      "title": "Admission",
+      "items": [
+        {
+          "title": "Park entry",
+          "desc": "Free — no gate fee for all visitors"
+        },
+        {
+          "title": "Parking",
+          "desc": "Free parking available on site"
+        },
+        {
+          "title": "Tram service",
+          "desc": "Available for a small fee for those who prefer not to walk"
+        },
+        {
+          "title": "Donations",
+          "desc": "Accepted for park maintenance"
+        }
+      ]
+    },
+    "transport": {
+      "tag": "03",
+      "title": "Getting there",
+      "items": [
+        {
+          "title": "Private car",
+          "desc": "Located on Phet Kasem Road (Highway 4), about 8 km south of Hua Hin town center."
+        },
+        {
+          "title": "Public transport",
+          "desc": "Green songthaews (shared taxis) run from Hua Hin town to Khao Takiab, from where you can take a taxi or walk."
+        },
+        {
+          "title": "Train",
+          "desc": "Suan Son Pradiphat Railway Halt is situated 790 metres east of Rajabhakti Park."
+        },
+        {
+          "title": "Tour packages",
+          "desc": "Many Hua Hin day tours include a stop at Rajabhakti Park."
+        }
+      ]
+    },
+    "faqTitle": "Frequently asked questions",
+    "faqs": [
+      {
+        "q": "Is there an entrance fee?",
+        "a": "No, entry to the park is completely free for both Thai nationals and foreigners."
+      },
+      {
+        "q": "Is there shade from the sun?",
+        "a": "The main plaza is very open and exposed to the sun. It is highly recommended to bring an umbrella, hat, and sunscreen, especially if visiting midday."
+      },
+      {
+        "q": "Are wheelchairs and strollers allowed?",
+        "a": "Yes, the park is very spacious and accessible with ramps."
+      },
+      {
+        "q": "Can I fly a drone?",
+        "a": "Flying drones is strictly prohibited without prior official permission from the military authorities."
+      }
+    ],
+    "etiquette": {
+      "tag": "⚠️ Dress Code & Etiquette (Official Rules)",
+      "text": "As Rajabhakti Park is managed by the Royal Thai Army and is a place of deep respect honoring the monarchy, visitors must dress modestly. Sleeveless shirts, short skirts, and shorts above the knee are strictly prohibited. Please maintain a respectful demeanor, especially when taking photographs."
+    },
+    "itinerariesTitle": "Educational Itineraries",
+    "itineraries": [
+      {
+        "title": "Half-Day History Tour",
+        "desc": "Start at Hua Hin Railway Station (classic Thai architecture), proceed to Rajabhakti Park for historical insights, and end at Khao Takiab for a panoramic coastal view."
+      },
+      {
+        "title": "Full-Day Cultural Route",
+        "desc": "Morning at Maruekhathaiyawan Palace, afternoon at Rajabhakti Park, and sunset at Suan Son Pradiphat Beach."
+      }
+    ]
+  },
+  "food": {
+    "label": "— 05 · Facilities & Amenities —",
+    "heading": "Park Facilities",
+    "lead": "Comfortable amenities to ensure a pleasant visit for all guests.",
+    "dishes": [
+      {
+        "tag": "01",
+        "name": "Visitor Center",
+        "desc": "Information desk and historical exhibition area",
+        "price": "Free"
+      },
+      {
+        "tag": "02",
+        "name": "Souvenir Shop",
+        "desc": "Official park merchandise and local handicrafts",
+        "price": "Varies"
+      },
+      {
+        "tag": "03",
+        "name": "Refreshment Stalls",
+        "desc": "Cold drinks, ice cream, and light snacks available near the parking area",
+        "price": "From 20 THB"
+      },
+      {
+        "tag": "04",
+        "name": "Restrooms",
+        "desc": "Clean and well-maintained facilities",
+        "price": "Free"
+      }
+    ],
+    "quote": {
+      "text": "The park provides a serene and respectful environment for visitors to reflect on the nation's history.",
+      "author": "— Park Administration"
+    }
+  },
+  "gallery": {
+    "label": "— 06 · Photo Gallery —",
+    "heading": "Scenes of Rajabhakti Park",
+    "intro": "A visual journey through the monumental statues and the grand plaza of the park.",
+    "historicalNote": "A modern tribute to ancient glory: The park perfectly blends contemporary bronze casting techniques with traditional Thai artistic styles.",
+    "viewLocation": "View location on Google Maps ↗",
+    "credits": "Photos are shared under Creative Commons licenses for non-profit educational use.",
+    "alts": [
+      "The seven bronze statues of Thai kings",
+      "Sunset over Rajabhakti Park",
+      "The vast ceremonial plaza",
+      "Close-up of King Ram Khamhaeng statue",
+      "Visitors paying respects",
+      "The park against the backdrop of Hua Hin mountains",
+      "Night illumination of the royal statues",
+      "Military ceremony at the park",
+      "Lush landscaping around the monuments",
+      "King Chulalongkorn statue",
+      "The entrance to Rajabhakti Park",
+      "Panoramic view of the park grounds",
+      "The historical museum building"
+    ]
+  },
+  "reviews": {
+    "label": "— 07 · Visitor Reviews —",
+    "heading": "Voices of Our Visitors",
+    "intro": "A collection of opinions from travellers around the world who visited Rajabhakti Park.",
+    "declaration": "All reviews are genuine user opinions with no sponsorship",
+    "featured": [
+      {
+        "text": "An awe-inspiring sight. The sheer scale of the statues and the mountain backdrop make for a majestic experience.",
+        "source": "— TripAdvisor"
+      },
+      {
+        "text": "A must-visit in Hua Hin to understand Thai history and the deep respect for the monarchy.",
+        "source": "— Google Reviews"
+      }
+    ],
+    "items": [
+      {
+        "name": "Somchai T.",
+        "date": "Mar 2026",
+        "rating": "5.0",
+        "text": "Very proud as a Thai to visit this place. The statues are magnificent."
+      },
+      {
+        "name": "Anna K.",
+        "date": "Feb 2026",
+        "rating": "4.0",
+        "text": "Impressive monument, but very hot during the day. Come around 5 PM."
+      },
+      {
+        "name": "Wichai P.",
+        "date": "Jan 2026",
+        "rating": "5.0",
+        "text": "Beautifully maintained grounds and very clean facilities."
+      },
+      {
+        "name": "Liu Mei",
+        "date": "Dec 2025",
+        "rating": "4.5",
+        "text": "Great place for photos, the mountain background is stunning."
+      },
+      {
+        "name": "John D.",
+        "date": "Nov 2025",
+        "rating": "4.0",
+        "text": "Interesting historical site. Read up on the kings before you go to appreciate it more."
+      },
+      {
+        "name": "Pimchanok S.",
+        "date": "Oct 2025",
+        "rating": "5.0",
+        "text": "Very peaceful atmosphere. The tram service is helpful for the elderly."
+      },
+      {
+        "name": "Tanaka H.",
+        "date": "Sep 2025",
+        "rating": "4.0",
+        "text": "Grand scale. Remember to wear appropriate clothing (no shorts)."
+      },
+      {
+        "name": "Niran R.",
+        "date": "Aug 2025",
+        "rating": "4.5",
+        "text": "A solemn and impressive place. Easy to access from Hua Hin town."
+      }
+    ],
+    "viewLocation": "View location on Google Maps ↗",
+    "disclaimer": "Overall rating 4.4 from 11,056 reviewers on Google Maps"
+  },
+  "mapSection": {
+    "label": "— 08 · Location & Getting There —",
+    "heading": "Location & Getting There",
+    "lead": "Rajabhakti Park is located in Nong Kae, Hua Hin District, Prachuap Khiri Khan Province.",
+    "address": "FXX8+H8H, 8 Phet Kasem Rd, Nong Kae, Hua Hin District, Prachuap Khiri Khan 77110, Thailand",
+    "phone": "+66 64 931 8466",
+    "plusCode": "FXX8+H8H · Hua Hin",
+    "coords": "12.50°N · 99.96°E",
+    "viewLocation": "Open in Google Maps ↗",
+    "stats": [
+      {
+        "tag": "Coordinates",
+        "value": "12.50°N 99.96°E",
+        "sub": "Hua Hin, Thailand"
+      },
+      {
+        "tag": "Distance",
+        "value": "~8 km",
+        "sub": "from Hua Hin center"
+      },
+      {
+        "tag": "Plus Code",
+        "value": "FXX8+H8H",
+        "sub": "Nong Kae"
+      }
+    ]
+  },
+  "footer": {
+    "brand": {
+      "name": "Rajabhakti Park",
+      "tagline": "The Royal Legacy of Thailand"
+    },
+    "about": "A non-profit, educational travel-information website dedicated to accurate, complete and respectful presentation of Thai history.",
+    "navTitle": "Menu",
+    "navItems": [
+      {
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "History",
+        "href": "#history"
+      },
+      {
+        "label": "Guide",
+        "href": "#guide"
+      },
+      {
+        "label": "Facilities",
+        "href": "#food"
+      },
+      {
+        "label": "Gallery",
+        "href": "#gallery"
+      },
+      {
+        "label": "Reviews",
+        "href": "#reviews"
+      },
+      {
+        "label": "Map",
+        "href": "#map"
+      }
+    ],
+    "noteTitle": "Note",
+    "note": "Information may change; please verify the latest hours and policies before you travel.",
+    "mapsLabel": "Google Maps →",
+    "sourcesTitle": "Sources & References",
+    "sourcesNote": "The facts, coordinates and opening hours on this site are compiled from the authoritative sources below for your further verification.",
+    "disclaimerLead": "This site is a public-interest informational guide and is not an official outlet. We welcome your updates and corrections by email.",
+    "unofficial": "Unofficial independent non-profit / UNOFFICIAL INDEPENDENT NON-PROFIT: This website is an independent non-profit visitor-information project. We are not affiliated with the Royal Thai Army or any government agency.",
+    "dataSource": "Data source · Data Source: The attraction information cited here is verified against public materials from the Tourism Authority of Thailand and Wikipedia.",
+    "copyright": "© 2026 Rajabhakti Park — a non-profit educational travel guide",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Settings",
+    "transparencyTitle": "Non-profit & Donation Transparency",
+    "transparency": "This website operates independently as a non-profit educational guide. Rajabhakti Park itself is maintained through public and private donations via the Rajabhakti Park Foundation. All on-site donations go directly to the foundation for the park's upkeep."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        {
+          "h": "Information we collect",
+          "p": "We collect only the minimum data necessary to provide our service. This may include:",
+          "list": [
+            "Browsing data (IP address, browser type, pages visited)",
+            "Cookies and similar technologies",
+            "Any information you voluntarily provide via our contact form or email"
+          ]
+        },
+        {
+          "h": "How we use your information",
+          "p": "We use the information we collect to:",
+          "list": [
+            "Improve our content and your experience",
+            "Analyse traffic and usage patterns",
+            "Respond to your requests",
+            "Comply with our legal obligations"
+          ]
+        },
+        {
+          "h": "Third-party services",
+          "p": "Our website may use third-party services such as Google Maps (for embedded maps and location data), Google Analytics (for traffic analysis) and Unsplash (for images). These services have their own privacy policies."
+        },
+        {
+          "h": "Your rights",
+          "p": "Under the General Data Protection Regulation (GDPR) and related laws, you have the following rights:",
+          "list": [
+            "Access your personal data",
+            "Request correction or deletion",
+            "Object to processing (restrict or refuse our use of your data)",
+            "Lodge a complaint with a supervisory authority"
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        {
+          "h": "Access and use",
+          "p": "By accessing and using this website, you agree to be bound by these Terms of Service."
+        },
+        {
+          "h": "Use of content",
+          "p": "All content on this website is provided for informational purposes only. We are an independent third-party travel-information website and are not affiliated with any attraction, government agency, or commercial operator."
+        },
+        {
+          "h": "Accuracy of information",
+          "p": "We strive to provide accurate and up-to-date information, but cannot guarantee its completeness or accuracy. Itineraries, conditions and services may change without notice. Always verify important details through official channels before you travel."
+        },
+        {
+          "h": "Intellectual property",
+          "p": "The design and original content of this website are protected by copyright. Images are from Unsplash and used under their licence. Google Maps data is used in accordance with Google's Terms of Service."
+        },
+        {
+          "h": "Limitation of liability",
+          "p": "This website is provided 'as is' without any warranties. We are not responsible for any loss arising from the use of the information on this site, including travel decisions based on its content."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Settings",
+      "updated": "Last updated: July 2026",
+      "intro": "We use cookies to improve your browsing experience. You can manage your preferences below.",
+      "categories": [
+        {
+          "h": "Necessary cookies",
+          "p": "These cookies are essential for the website to function and cannot be disabled.",
+          "status": "Always active",
+          "active": true
+        },
+        {
+          "h": "Analytics cookies",
+          "p": "They help us understand how visitors interact with our website by collecting anonymous usage data.",
+          "sub": "Google Analytics",
+          "subStatus": "Active",
+          "active": true
+        },
+        {
+          "h": "Preference cookies",
+          "p": "They remember your settings, such as language and theme preferences.",
+          "sub": "User preferences",
+          "subStatus": "Active",
+          "active": true
+        },
+        {
+          "h": "Marketing cookies",
+          "p": "They are used to show relevant ads and measure the effectiveness of ad campaigns.",
+          "sub": "Personalised ads",
+          "subStatus": "Disabled",
+          "active": false
+        }
+      ],
+      "consent": "You can change your cookie settings at any time. Please note that disabling certain cookies may affect the functionality of the website.",
+      "save": "Save preferences",
+      "rejectAll": "Reject all"
+    }
+  }
+}
