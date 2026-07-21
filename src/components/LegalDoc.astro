@@ -13,13 +13,13 @@ const doc = (messages.legal as any)[type];
 ---
 <BaseLayout lang={lang} title={doc.title} description={doc.title}>
   <Header lang={lang} messages={messages} />
-  <main class="mx-auto max-w-3xl px-5 py-14 text-ivory/85 leading-relaxed">
-    <h1 class="font-display text-3xl md:text-4xl text-gold mb-2">{doc.title}</h1>
-    <p class="text-sm text-ivory/50 mb-8">{doc.updated}</p>
+  <main class="mx-auto max-w-3xl px-5 py-14 text-teak/85 leading-relaxed">
+    <h1 class="font-display text-3xl md:text-4xl text-teak mb-2">{doc.title}</h1>
+    <p class="text-sm text-teak/60 mb-8">{doc.updated}</p>
 
     {type !== 'cookies' && doc.sections.map((s: any) => (
       <section class="mb-8">
-        <h2 class="font-display text-xl text-goldBright mb-2">{s.h}</h2>
+        <h2 class="font-display text-xl text-teak mb-2">{s.h}</h2>
         {s.p && <p class="mb-3">{s.p}</p>}
         {s.list && (
           <ul class="list-disc pl-6 space-y-1">
@@ -34,25 +34,25 @@ const doc = (messages.legal as any)[type];
         <p class="mb-6">{doc.intro}</p>
         <div class="space-y-4">
           {doc.categories.map((c: any) => (
-            <div class="rounded-2xl border border-gold/20 p-5">
+            <div class="rounded-2xl border border-teak/20 p-5">
               <div class="flex items-center justify-between gap-3">
-                <h2 class="font-display text-lg text-goldBright">{c.h}</h2>
-                <span class={`text-xs px-2 py-1 rounded-full ${c.active ? 'bg-gold/15 text-goldBright' : 'bg-ivory/10 text-ivory/60'}`}>{c.status}</span>
+                <h2 class="font-display text-lg text-teak">{c.h}</h2>
+                <span class={`text-xs px-2 py-1 rounded-full ${c.active ? 'bg-teak/15 text-teak' : 'bg-teak/5 text-teak/60'}`}>{c.status}</span>
               </div>
-              <p class="mt-2 text-sm text-ivory/75">{c.p}</p>
+              <p class="mt-2 text-sm text-teak/75">{c.p}</p>
               {c.sub && (
-                <div class="mt-2 flex items-center justify-between text-sm text-ivory/60">
+                <div class="mt-2 flex items-center justify-between text-sm text-teak/60">
                   <span>{c.sub}</span>
-                  <span class={c.active ? 'text-goldBright' : 'text-ivory/50'}>{c.subStatus}</span>
+                  <span class={c.active ? 'text-teak' : 'text-teak/50'}>{c.subStatus}</span>
                 </div>
               )}
             </div>
           ))}
         </div>
-        <p class="mt-6 text-sm text-ivory/60">{doc.consent}</p>
+        <p class="mt-6 text-sm text-teak/60">{doc.consent}</p>
         <div class="mt-6 flex gap-3">
-          <button type="button" class="rounded-full bg-gold px-5 py-2 text-sm font-medium text-inkDark">{doc.save}</button>
-          <button type="button" class="rounded-full border border-ivory/30 px-5 py-2 text-sm text-ivory/80">{doc.rejectAll}</button>
+          <button type="button" class="rounded-full bg-teak px-5 py-2 text-sm font-medium text-ivory">{doc.save}</button>
+          <button type="button" class="rounded-full border border-teak/30 px-5 py-2 text-sm text-teak/80">{doc.rejectAll}</button>
         </div>
       </>
     )}
