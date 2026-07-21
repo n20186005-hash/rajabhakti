@@ -6,7 +6,7 @@ export const siteConfig = {
     zh: '拉差帕迪公园',
   },
   slug: 'rajabhakti-park',
-  domain: 'https://rajabhakti.com',
+  domain: process.env.CURRENT_SITE_DOMAIN ? `https://${process.env.CURRENT_SITE_DOMAIN}` : 'https://rajabhakti.com',
 
   // Google Maps — ALL four on-page links point here
   mapsUrl: 'https://maps.app.goo.gl/c1sbfUirS3S5eCGE8',
