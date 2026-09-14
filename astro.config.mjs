@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import cloudflare from '@astrojs/cloudflare';
 import zlib from 'node:zlib';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -114,7 +115,11 @@ function pwaIcons() {
 // https://astro.build/config
 export default defineConfig({
   site: process.env.CURRENT_SITE_DOMAIN ? `https://${process.env.CURRENT_SITE_DOMAIN}` : 'https://rajabhakti.com',
-  output: 'static',
+  output: 'hybrid',
+  adapter: cloudflare({
+    imageService: 'passthrough',
+    routes: { strategy: 'auto' },
+  }),
   integrations: [pwaIcons()],
   i18n: {
     defaultLocale: 'th',
@@ -123,7 +128,13 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+  image: {
+    remotePatterns: [{ protocol: 'https', hostname: '**' }],
+    quality: 75,
+    formats: ['avif', 'webp', 'jpeg'],
+  },
   vite: {
     plugins: [tailwindcss()],
+    build: { minify: 'esbuild', cssMinify: 'esbuild' },
   },
 });
