@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Rajabhakti Park — The Complete Visitor Guide",
-    "description": "Rajabhakti Park, Hua Hin — your complete guide: history, royal statues, visitor tips and real reviews. Experience the grandeur of Thailand's royal history."
+    "title": "Rajabhakti Park (Hua Hin) – Visitor Guide & Location",
+    "description": "Discover Rajabhakti Park, the iconic royal-heritage landmark in Hua Hin, Prachuap Khiri Khan, Thailand. View the location map, opening hours, nearby Khao Takiab, and travel tips."
   },
   "common": {
     "siteName": "Rajabhakti Park",
@@ -27,7 +27,10 @@
     "cta1": "Start the journey",
     "cta2": "Explore the grounds →",
     "rating": "4.4",
-    "reviewCount": "11,056",
+    "reviewCount": "11,113",
+    "ratingSyncNote": "Rating and review count synced from Google Maps user reviews · September 2026",
+    "viewAllReviews": "View all reviews on Google Maps ↗",
+    "imgAlt": "Rajabhakti Park — Main view in Hua Hin, Thailand",
     "liveWeather": "Live weather",
     "liveSunset": "Sunset",
     "loading": "Loading live data from the actual location…",
@@ -46,6 +49,8 @@
   "about": {
     "label": "— 02 · About the Park —",
     "heading": "About Rajabhakti Park",
+    "entityLead": "Welcome to Rajabhakti Park, widely recognized as the royal-heritage landmark of Hua Hin. Located in the heart of Hua Hin, Prachuap Khiri Khan, Thailand, this destination serves as a primary hub for travelers visiting the region.",
+    "breadcrumb": ["Rajabhakti Park", "Hua Hin", "Prachuap Khiri Khan", "Thailand"],
     "lead": "A monumental historical park in Hua Hin, created to honor the great kings of Thailand.",
     "paragraph1": "Rajabhakti Park is a historically themed park honouring past Thai kings. It is located in Hua Hin, Prachuap Khiri Khan Province, Thailand. The park was built by the Royal Thai Army with funds donated by the public and private sectors.",
     "paragraph2": "King Bhumibol Adulyadej gave the historical park the name 'Rajabhakti Park', which means 'the park that has been built with people's loyalty to the monarchs'.",
@@ -90,7 +95,7 @@
   },
   "history": {
     "label": "— 03 · History & Legacy —",
-    "heading": "The History & Legacy of the Kings",
+    "heading": "History & Significance of Rajabhakti Park",
     "intro": "Thailand has a centuries-old history of monarchy, spanning dozens of kings. These seven kings (from the 13th to the 20th century) are known as \"The Great\" or key leaders who made a decisive turning point in the nation's destiny. The park chose them to establish a memorial corridor that runs through the historical and cultural context of Siam.",
     "blocks": [
       {
@@ -273,6 +278,10 @@
     },
     "faqs": [
       {
+        "q": "Where is Rajabhakti Park located?",
+        "a": "Rajabhakti Park is located at 8 Phet Kasem Rd, Nong Kae, Hua Hin District, Prachuap Khiri Khan 77110, Thailand (Plus Code: FXX8+H8H), about 8 km south of central Hua Hin."
+      },
+      {
         "q": "Is there an entrance fee?",
         "a": "No, entry to the park is completely free for both Thai nationals and foreigners."
       },
@@ -428,13 +437,17 @@
         "text": "A solemn and impressive place. Easy to access from Hua Hin town."
       }
     ],
-    "viewLocation": "View location on Google Maps ↗",
-    "disclaimer": "Overall rating 4.4 from 11,056 reviewers on Google Maps"
+    "viewLocation": "View all reviews on Google Maps",
+    "sourceNote": "Reviews are synced from Google Maps user reviews as of September 2026; copyright belongs to the original reviewers and Google Maps.",
+    "disclaimer": "Overall rating 4.4 from 11,113 reviewers on Google Maps"
   },
   "mapSection": {
     "label": "— 08 · Location & Getting There —",
-    "heading": "Location & Getting There",
+    "heading": "Location & How to Visit Rajabhakti Park in Hua Hin",
     "lead": "Rajabhakti Park is located in Nong Kae, Hua Hin District, Prachuap Khiri Khan Province.",
+    "nearbyNote": "When visiting Rajabhakti Park, visitors can easily explore surrounding historical landmarks and points of interest, including Khao Takiab (Chopsticks Mountain) and the historic Hua Hin Railway Station.",
+    "officialNote": "For official updates and regional tourism information, visit the",
+    "officialLink": "Thailand Official Tourism Portal",
     "address": "FXX8+H8H, 8 Phet Kasem Rd, Nong Kae, Hua Hin District, Prachuap Khiri Khan 77110, Thailand",
     "phone": "+66 64 931 8466",
     "plusCode": "FXX8+H8H · Hua Hin",
@@ -504,6 +517,10 @@
     "mapsLabel": "Google Maps →",
     "sourcesTitle": "Sources & References",
     "sourcesNote": "The facts, coordinates and opening hours on this site are compiled from the authoritative sources below for your further verification.",
+    "reviewsSourceLabel": "Reviews · Synced September 2026",
+    "reviewsSourceNote": "Reviews and ratings are synced from Google Maps user reviews as of September 2026; copyright belongs to the original reviewers and Google Maps.",
+    "reviewsSourceLink": "View all reviews on Google Maps ↗",
+    "imageCopyright": "Image copyright: All images shown on this website are the property and copyright of their original photographers.",
     "disclaimerLead": "This site is a public-interest informational guide and is not an official outlet. We welcome your updates and corrections by email.",
     "unofficial": "Unofficial independent non-profit / UNOFFICIAL INDEPENDENT NON-PROFIT: This website is an independent non-profit visitor-information project. We are not affiliated with the Royal Thai Army or any government agency.",
     "dataSource": "Data source · Data Source: The attraction information cited here is verified against public materials from the Tourism Authority of Thailand and Wikipedia.",

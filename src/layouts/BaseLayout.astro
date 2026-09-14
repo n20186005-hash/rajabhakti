@@ -3,26 +3,46 @@ import '../styles/global.css';
 import { siteConfig } from '../config';
 import { htmlLang, languagesList, type Lang } from '../i18n/ui';
 
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
 interface Props {
   lang: Lang;
   title: string;
   description: string;
+  faqs?: FaqItem[];
 }
-const { lang, title, description } = Astro.props;
-const canonical = `${siteConfig.domain}/${lang}/`;
 
-const jsonLd = [
+const { lang, title, description, faqs } = Astro.props;
+const canonical = `${siteConfig.domain}/${lang}/`;
+const heroImage = `${siteConfig.domain}/gallery/rajabhakti-park-1.jpg`;
+const heroImageAlt = `${siteConfig.name.en} (${siteConfig.name.th}) — ${siteConfig.addressParts.addressLocality}, Thailand`;
+
+const jsonLd: Record<string, unknown>[] = [
   {
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
+    '@id': `${siteConfig.domain}/#attraction`,
     name: siteConfig.name[lang],
+    alternateName: [
+      siteConfig.name.th,
+      siteConfig.name.en,
+      `${siteConfig.addressParts.addressLocality} ${siteConfig.name.en}`,
+    ],
     description,
-    image: `${siteConfig.domain}/gallery/rajabhakti-park-1.jpg`,
     url: canonical,
+    image: [heroImage],
+    isAccessibleForFree: true,
+    hasMap: siteConfig.mapsUrl,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: siteConfig.address[lang],
-      addressCountry: 'TH',
+      streetAddress: siteConfig.addressParts.streetAddress,
+      addressLocality: siteConfig.addressParts.addressLocality,
+      addressRegion: siteConfig.addressParts.addressRegion,
+      postalCode: siteConfig.addressParts.postalCode,
+      addressCountry: siteConfig.addressParts.addressCountry,
     },
     geo: {
       '@type': 'GeoCoordinates',
@@ -38,35 +58,29 @@ const jsonLd = [
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '07:00',
-        closes: '17:00',
+        opens: '08:00',
+        closes: '18:00',
       },
     ],
     sameAs: siteConfig.sameAs,
   },
-  {
+];
+
+// FAQPage structured data — only emitted on pages that pass visible FAQ content
+if (faqs && faqs.length > 0) {
+  jsonLd.push({
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: '哪天去最好？ / Best day to visit?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: '工作日比周末人少，破晓时分最能感受原汁原味的氛围。/ Weekdays are less crowded. Early morning offers the most authentic experience.'
-        }
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a,
       },
-      {
-        '@type': 'Question',
-        name: '需要提前订船吗？ / Need to book a boat in advance?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: '多数可在码头现场租到，但节假日建议预订。/ Mostly available on-site, but booking is recommended on holidays.'
-        }
-      }
-    ]
-  }
-];
+    })),
+  });
+}
 ---
 
 <!doctype html>
@@ -84,6 +98,12 @@ const jsonLd = [
       gtag('config', 'G-HXM22WWPKP');
     </script>
 
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#071a1c" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-title" content={siteConfig.name.en} />
+
     <link rel="icon" type="image/jpeg" href={`/gallery/rajabhakti-park-1.jpg`} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -92,7 +112,8 @@ const jsonLd = [
     <meta property="og:locale" content={htmlLang[lang]} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${siteConfig.domain}/gallery/rajabhakti-park-1.jpg`} />
+    <meta property="og:image" content={heroImage} />
+    <meta property="og:image:alt" content={heroImageAlt} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
     {languagesList.map((l) => (
@@ -110,5 +131,14 @@ const jsonLd = [
   </head>
   <body class="grain">
     <slot />
+
+    <!-- PWA service worker -->
+    <script>
+      if ('serviceWorker' in navigator && location.protocol === 'https:') {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>

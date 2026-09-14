@@ -15,6 +15,7 @@ const { lat, lng } = siteConfig.coords;
     <p class="font-hand text-gold text-xl md:text-2xl">{map.label}</p>
     <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{map.heading}</h2>
     <p class="mt-4 max-w-2xl text-ink/80">{map.lead}</p>
+    <p class="mt-3 max-w-2xl text-sm text-ink/70">{map.nearbyNote}</p>
 
     <div class="grid md:grid-cols-2 gap-8 mt-10">
       <div class="space-y-4">
@@ -52,5 +53,18 @@ const { lat, lng } = siteConfig.coords;
         ></iframe>
       </div>
     </div>
+
+    <!-- Official tourism authority outbound link (E-E-A-T) -->
+    <p class="mt-8 text-sm text-ink/75">
+      {map.officialNote}
+      <a
+        href={siteConfig.govtTourismUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-teak font-medium underline underline-offset-2 hover:text-gold"
+      >
+        {map.officialLink} ↗
+      </a>.
+    </p>
   </div>
 </section>

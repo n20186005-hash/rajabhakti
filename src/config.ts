@@ -23,7 +23,13 @@ export const siteConfig = {
   },
 
   rating: '4.4',
-  reviewCount: '11,056',
+  reviewCount: '11,113',
+  // Google Maps user reviews sync date (for on-page attribution)
+  reviewSyncDate: {
+    en: 'September 2026',
+    th: 'กันยายน 2026',
+    zh: '2026 年 9 月',
+  },
   category: {
     th: 'สวนสาธารณะ',
     en: 'Park',
@@ -49,7 +55,28 @@ export const siteConfig = {
   // JSON-LD / OG
   sameAs: [
     'https://maps.app.goo.gl/c1sbfUirS3S5eCGE8',
+    'https://www.tourismthailand.org/Attraction/rajabhakti-park',
+    'https://en.wikipedia.org/wiki/Rajabhakti_Park',
   ],
+
+  // official government / tourism-authority portal (E-E-A-T outbound link)
+  govtTourismUrl: 'https://www.tourismthailand.org/Attraction/rajabhakti-park',
+
+  // semantic address parts for JSON-LD PostalAddress
+  addressParts: {
+    streetAddress: '8 Phet Kasem Rd, Nong Kae',
+    addressLocality: 'Hua Hin',
+    addressRegion: 'Prachuap Khiri Khan',
+    postalCode: '77110',
+    addressCountry: 'TH',
+  },
+
+  // nearby core landmarks (semantic cluster)
+  nearbyLandmarks: {
+    en: ['Khao Takiab (Chopsticks Mountain)', 'Hua Hin Railway Station'],
+    th: ['เขาตะเกียบ', 'สถานีรถไฟหัวหิน'],
+    zh: ['筷子山（Khao Takiab）', '华欣火车站'],
+  },
 
   // authoritative reference sources (E-E-A-T)
   sources: [

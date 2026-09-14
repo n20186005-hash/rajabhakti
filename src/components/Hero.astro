@@ -18,7 +18,7 @@ const coordsLabel = siteConfig.coords.label[lang];
 ---
 
 <section id="home" class="relative min-h-screen flex items-end overflow-hidden">
-  <img src={heroImg} alt={main} class="absolute inset-0 w-full h-full object-cover" />
+  <img src={heroImg} alt={hero.imgAlt} class="absolute inset-0 w-full h-full object-cover" />
   <div class="absolute inset-0 bg-gradient-to-t from-teakDeep via-teakDeep/70 to-teak/40"></div>
   <div class="hero-glow absolute inset-0"></div>
 
@@ -45,6 +45,10 @@ const coordsLabel = siteConfig.coords.label[lang];
         <span class="hidden sm:inline text-ivory/40">·</span>
         <span>{coordsLabel}</span>
       </div>
+      <p class="mt-2 text-xs text-ivory/55">
+        {hero.ratingSyncNote} ·
+        <a href={mapsUrl} target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-goldBright">{hero.viewAllReviews}</a>
+      </p>
 
       <a href={mapsUrl} target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-goldBright hover:text-gold underline-offset-4 hover:underline text-sm">
         {hero.viewLocation}

@@ -6,6 +6,7 @@ interface Props {
 }
 const { messages } = Astro.props;
 const reviews = messages.reviews;
+const viewAllReviews = messages.hero.viewAllReviews;
 const mapsUrl = siteConfig.mapsUrl;
 
 const stars = (r: string) => {
@@ -25,7 +26,11 @@ const stars = (r: string) => {
       <span class="font-display text-2xl text-goldBright">{siteConfig.rating}</span>
       <span class="text-ivory/70">{reviews.disclaimer}</span>
     </div>
-    <p class="mt-2 text-xs text-ivory/50">{reviews.declaration}</p>
+    <p class="mt-2 text-xs text-ivory/50">
+      {reviews.sourceNote}
+      <a href={mapsUrl} target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-goldBright">{viewAllReviews}</a>
+    </p>
+    <p class="mt-1 text-xs text-ivory/50">{reviews.declaration}</p>
 
     <div class="grid md:grid-cols-2 gap-4 mt-8">
       {reviews.featured.map((f) => (

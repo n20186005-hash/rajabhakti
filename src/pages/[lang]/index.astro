@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 const { lang, messages } = await getI18n(Astro.url);
 ---
 
-<BaseLayout lang={lang} title={messages.meta.title} description={messages.meta.description}>
+<BaseLayout lang={lang} title={messages.meta.title} description={messages.meta.description} faqs={messages.guide.faqs}>
   <Header lang={lang} messages={messages} />
   <main>
     <Hero lang={lang} messages={messages} />

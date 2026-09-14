@@ -1,0 +1,35 @@
+{
+  "name": "Rajabhakti Park — Hua Hin Visitor Guide",
+  "short_name": "Rajabhakti Park",
+  "description": "Complete visitor guide to Rajabhakti Park (อุทยานราชภักดิ์) in Hua Hin, Prachuap Khiri Khan, Thailand: history, royal statues, travel tips and reviews.",
+  "id": "/",
+  "start_url": "/th/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#071a1c",
+  "theme_color": "#071a1c",
+  "lang": "th",
+  "dir": "ltr",
+  "categories": ["travel", "education"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
