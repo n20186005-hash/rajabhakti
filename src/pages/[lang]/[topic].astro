@@ -1,0 +1,117 @@
+---
+import { getI18n } from '../../i18n/ui';
+import { topics, getTopic } from '../../i18n/topics';
+import TopicLayout from '../../layouts/TopicLayout.astro';
+import { siteConfig } from '../../config';
+
+export function getStaticPaths() {
+  return topics.map((t) => ({ params: { lang: t.lang, topic: t.slug } }));
+}
+
+const { lang, messages } = await getI18n(Astro.url);
+const slug = Astro.params.topic as string;
+const topic = getTopic(lang, slug);
+if (!topic) return Astro.redirect(`/${lang}/`);
+const mapsUrl = siteConfig.mapsUrl;
+---
+
+<TopicLayout
+  lang={lang}
+  title={topic.title}
+  description={topic.description}
+  path={`/${lang}/${slug}/`}
+  faqs={topic.faq}
+  breadcrumb={topic.breadcrumb}
+  messages={messages}
+>
+  <!-- Page header -->
+  <section class="pt-28 pb-10 bg-teakDeep text-ivory">
+    <div class="max-w-4xl mx-auto px-5">
+      <nav aria-label="Breadcrumb" class="text-sm text-ivory/60">
+        <ol class="flex flex-wrap items-center gap-2">
+          {topic.breadcrumb.map((b, i) => (
+            <li class="flex items-center gap-2">
+              {i > 0 && <span class="text-gold" aria-hidden="true">→</span>}
+              <a href={b.url} class="hover:text-goldBright transition-colors">{b.name}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+      <h1 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-4 gold-text-bright">{topic.h1}</h1>
+      <p class="mt-4 text-ivory/85 leading-relaxed">{topic.intro}</p>
+      {topic.updated && <span class="chip text-goldBright border-gold/40 mt-5 inline-flex">{topic.updated}</span>}
+    </div>
+  </section>
+
+  <!-- Body sections -->
+  <section class="py-14 bg-ivory text-ink">
+    <div class="max-w-4xl mx-auto px-5 space-y-12">
+      {topic.sections.map((s) => (
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-4">{s.heading}</h2>
+          <div class="space-y-3 text-ink/85">
+            {s.body.map((p) => <p>{p}</p>)}
+          </div>
+        </div>
+      ))}
+
+      {topic.kings && (
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">The seven kings at a glance</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {topic.kings.map((k) => (
+              <div class="rounded-xl border border-gold/25 bg-white/50 p-5">
+                <div class="text-xs uppercase tracking-wider text-gold/80 mb-1">{k.period}</div>
+                <h3 class="font-display text-lg text-teak mb-2">{k.name}</h3>
+                <p class="text-sm text-ink/75 leading-relaxed">{k.contribution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-14 bg-teakDeep text-ivory">
+    <div class="max-w-3xl mx-auto px-5">
+      <h2 class="font-display text-2xl md:text-3xl text-goldBright mb-6">Frequently asked questions</h2>
+      <div class="space-y-3">
+        {topic.faq.map((f) => (
+          <details class="group rounded-xl border border-gold/25 bg-teak/40 p-4 open:bg-teak/60">
+            <summary class="cursor-pointer font-medium text-ivory flex justify-between items-center">
+              {f.q}
+              <span class="text-gold transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-2 text-sm text-ivory/80">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related links -->
+  <section class="py-14 bg-ivory text-ink">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="font-display text-2xl text-teak mb-5">Related guides</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {topic.related.map((r) => (
+          <a href={r.url} class="rounded-xl border border-gold/30 bg-white/50 p-5 hover:border-gold/60 transition-colors">
+            <div class="font-display text-lg text-teak mb-1">{r.title}</div>
+            <p class="text-sm text-ink/70">{r.desc}</p>
+          </a>
+        ))}
+      </div>
+      <div class="mt-8">
+        <a
+          href={mapsUrl}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 bg-gold text-teak font-semibold px-5 py-2.5 rounded-full hover:bg-goldBright transition-colors"
+        >
+          View on Google Maps ↗
+        </a>
+      </div>
+    </div>
+  </section>
+</TopicLayout>

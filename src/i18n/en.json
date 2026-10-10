@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Rajabhakti Park (Hua Hin) – Visitor Guide & Location",
-    "description": "Discover Rajabhakti Park, the iconic royal-heritage landmark in Hua Hin, Prachuap Khiri Khan, Thailand. View the location map, opening hours, nearby Khao Takiab, and travel tips."
+    "title": "Rajabhakti Park Hua Hin: Hours, Free Entry, Dress Code & 7 Kings",
+    "description": "Plan your visit to Rajabhakti Park in Hua Hin. Find opening hours, free entry information, dress code advice, directions, photos and the seven Thai kings."
   },
   "common": {
     "siteName": "Rajabhakti Park",
@@ -49,7 +49,7 @@
   "about": {
     "label": "— 02 · About the Park —",
     "heading": "About Rajabhakti Park",
-    "entityLead": "Welcome to Rajabhakti Park, widely recognized as the royal-heritage landmark of Hua Hin. Located in the heart of Hua Hin, Prachuap Khiri Khan, Thailand, this destination serves as a primary hub for travelers visiting the region.",
+    "entityLead": "Welcome to Rajabhakti Park, widely recognized as the royal-heritage landmark of Hua Hin. Located about 8 km south of central Hua Hin in Prachuap Khiri Khan, Thailand, the park honours the great kings of Thailand with seven monumental bronze statues.",
     "breadcrumb": ["Rajabhakti Park", "Hua Hin", "Prachuap Khiri Khan", "Thailand"],
     "lead": "A monumental historical park in Hua Hin, created to honor the great kings of Thailand.",
     "paragraph1": "Rajabhakti Park is a historically themed park honouring past Thai kings. It is located in Hua Hin, Prachuap Khiri Khan Province, Thailand. The park was built by the Royal Thai Army with funds donated by the public and private sectors.",
@@ -287,7 +287,7 @@
       },
       {
         "q": "Can I fly a drone?",
-        "a": "No. Because the park is managed by the Royal Thai Army and is adjacent to a military base, unauthorized drone flights are strictly prohibited in the entire area."
+        "a": "Unauthorized drone flights are generally not permitted at Rajabhakti Park, which is managed by the Royal Thai Army next to a military area. If you need aerial footage, contact the park administration in advance to ask about approval."
       },
       {
         "q": "Are there any special requirements for posture and etiquette during the visit?",
@@ -296,11 +296,20 @@
       {
         "q": "Are wheelchairs and strollers allowed?",
         "a": "Yes, the park is very spacious and accessible with ramps."
+      },
+      {
+        "q": "What should I wear to Rajabhakti Park?",
+        "a": "Dress modestly out of respect for the monarchy: avoid sleeveless tops, short skirts, and shorts above the knee. Light, breathable clothing works best in Hua Hin's heat. Confirm current guidance on-site."
+      },
+      {
+        "q": "When is the best light for photos?",
+        "a": "Late afternoon, roughly 16:00–18:00, gives warm golden light on the bronze statues and a comfortable temperature. The park opens at 08:00 and closes at 18:00."
       }
     ],
     "etiquette": {
-      "tag": "⚠️ Dress Code & Etiquette (Official Rules)",
-      "text": "As Rajabhakti Park is managed by the Royal Thai Army and is a place of deep respect honoring the monarchy, visitors must dress modestly. Sleeveless shirts, short skirts, and shorts above the knee are strictly prohibited. Please maintain a respectful demeanor, especially when taking photographs."
+      "tag": "⚠️ Dress Code & Visitor Etiquette",
+      "text": "Rajabhakti Park is a place of deep respect honoring the monarchy. As a visitor tip, please dress modestly — sleeveless tops, short skirts, and shorts above the knee are discouraged. Keep a respectful demeanor, especially when taking photos. Guidance can change, so please confirm the latest dress and conduct rules with on-site staff before your visit.",
+      "updated": "Visitor guidance updated October 2026"
     },
     "itinerariesTitle": "Educational Itineraries",
     "itineraries": [
@@ -355,7 +364,7 @@
     "intro": "A visual journey through the monumental statues and the grand plaza of the park.",
     "historicalNote": "A modern tribute to ancient glory: The park perfectly blends contemporary bronze casting techniques with traditional Thai artistic styles.",
     "viewLocation": "View location on Google Maps ↗",
-    "credits": "Photos are shared under Creative Commons licenses for non-profit educational use.",
+    "credits": "Photos are shown for non-profit educational reference. Copyright and any licence belong to the original photographers; this site is not the rights holder.",
     "alts": [
       "The seven bronze statues of Thai kings",
       "Sunset over Rajabhakti Park",
@@ -373,73 +382,13 @@
     ]
   },
   "reviews": {
-    "label": "— 07 · Visitor Reviews —",
-    "heading": "Voices of Our Visitors",
-    "intro": "A collection of opinions from travellers around the world who visited Rajabhakti Park.",
-    "declaration": "All reviews are genuine user opinions with no sponsorship",
-    "featured": [
-      {
-        "text": "An awe-inspiring sight. The sheer scale of the statues and the mountain backdrop make for a majestic experience.",
-        "source": "— TripAdvisor"
-      },
-      {
-        "text": "A must-visit in Hua Hin to understand Thai history and the deep respect for the monarchy.",
-        "source": "— Google Reviews"
-      }
-    ],
-    "items": [
-      {
-        "name": "Somchai T.",
-        "date": "Mar 2026",
-        "rating": "5.0",
-        "text": "Very proud as a Thai to visit this place. The statues are magnificent."
-      },
-      {
-        "name": "Anna K.",
-        "date": "Feb 2026",
-        "rating": "4.0",
-        "text": "Impressive monument, but very hot during the day. Come around 5 PM."
-      },
-      {
-        "name": "Wichai P.",
-        "date": "Jan 2026",
-        "rating": "5.0",
-        "text": "Beautifully maintained grounds and very clean facilities."
-      },
-      {
-        "name": "Liu Mei",
-        "date": "Dec 2025",
-        "rating": "4.5",
-        "text": "Great place for photos, the mountain background is stunning."
-      },
-      {
-        "name": "John D.",
-        "date": "Nov 2025",
-        "rating": "4.0",
-        "text": "Interesting historical site. Read up on the kings before you go to appreciate it more."
-      },
-      {
-        "name": "Pimchanok S.",
-        "date": "Oct 2025",
-        "rating": "5.0",
-        "text": "Very peaceful atmosphere. The tram service is helpful for the elderly."
-      },
-      {
-        "name": "Tanaka H.",
-        "date": "Sep 2025",
-        "rating": "4.0",
-        "text": "Grand scale. Remember to wear appropriate clothing (no shorts)."
-      },
-      {
-        "name": "Niran R.",
-        "date": "Aug 2025",
-        "rating": "4.5",
-        "text": "A solemn and impressive place. Easy to access from Hua Hin town."
-      }
-    ],
+    "label": "— 07 · Visitor Ratings —",
+    "heading": "Ratings from Google Maps",
+    "intro": "Rajabhakti Park is consistently rated highly by travellers. The summary below reflects Google Maps user reviews and is provided for reference.",
     "viewLocation": "View all reviews on Google Maps",
-    "sourceNote": "Reviews are synced from Google Maps user reviews as of September 2026; copyright belongs to the original reviewers and Google Maps.",
-    "disclaimer": "Overall rating 4.4 from 11,113 reviewers on Google Maps"
+    "sourceNote": "Ratings are synced from Google Maps user reviews as of September 2026; copyright belongs to the original reviewers and Google Maps.",
+    "disclaimer": "Overall rating 4.4 from 11,113 reviewers on Google Maps",
+    "snapshotNote": "This site does not publish individual visitor quotes. The rating shown above is a summary of Google Maps user reviews."
   },
   "mapSection": {
     "label": "— 08 · Location & Getting There —",

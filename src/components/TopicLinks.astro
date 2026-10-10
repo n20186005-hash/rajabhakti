@@ -1,0 +1,44 @@
+---
+import { topics } from '../i18n/topics';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const heading: Record<Lang, string> = {
+  en: 'Plan your visit to Rajabhakti Park',
+  th: 'วางแผนการเยี่ยมชมอุทยานราชภักดิ์',
+  zh: '规划你的拉差帕迪公园之旅',
+};
+const sub: Record<Lang, string> = {
+  en: 'Detailed, independent guides for visitors',
+  th: 'คู่มือรายละเอียดสำหรับผู้เยี่ยมชม',
+  zh: '为游客准备的详细独立指南',
+};
+
+// Show topic pages in the current language; for Chinese (no ZH topic pages yet) show the English guides.
+const links = topics.filter((t) => t.lang === lang || (lang === 'zh' && t.lang === 'en'));
+---
+
+{links.length > 0 && (
+  <section class="py-16 bg-teakDeep text-ivory">
+    <div class="max-w-7xl mx-auto px-5">
+      <p class="font-hand text-gold text-xl md:text-2xl">{heading[lang]}</p>
+      <h2 class="font-display font-semibold text-2xl md:text-4xl text-ivory mt-2">{sub[lang]}</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+        {links.map((l) => (
+          <a
+            href={`/${l.lang}/${l.slug}/`}
+            class="group rounded-2xl border border-gold/25 bg-teak/40 p-6 hover:bg-teak/60 hover:border-gold/50 transition-colors"
+          >
+            <div class="font-display text-lg text-goldBright mb-2">{l.h1}</div>
+            <p class="text-sm text-ivory/75 leading-relaxed">{l.intro}</p>
+            <span class="inline-block mt-3 text-gold group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

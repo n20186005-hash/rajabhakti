@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 import zlib from 'node:zlib';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -120,7 +121,7 @@ export default defineConfig({
     imageService: 'passthrough',
     routes: { strategy: 'auto' },
   }),
-  integrations: [pwaIcons()],
+  integrations: [pwaIcons(), sitemap()],
   i18n: {
     defaultLocale: 'th',
     locales: ['th', 'en', 'zh'],

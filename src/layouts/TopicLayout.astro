@@ -1,0 +1,132 @@
+---
+import '../styles/global.css';
+import { siteConfig } from '../config';
+import { htmlLang, type Lang } from '../i18n/ui';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface FaqItem {
+  q: string;
+  a: string;
+}
+interface Crumb {
+  name: string;
+  url: string;
+}
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  path: string;
+  faqs: FaqItem[];
+  breadcrumb: Crumb[];
+  messages: any;
+}
+const { lang, title, description, path, faqs, breadcrumb, messages } = Astro.props;
+const canonical = `${siteConfig.domain}${path}`;
+const heroImage = `${siteConfig.domain}/gallery/rajabhakti-park-1.jpg`;
+const heroImageAlt = `${siteConfig.name.en} (${siteConfig.name.th}) — ${siteConfig.addressParts.addressLocality}, Thailand`;
+
+const jsonLd: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': canonical,
+    name: title,
+    description,
+    url: canonical,
+    inLanguage: htmlLang[lang],
+    isPartOf: {
+      '@type': 'WebSite',
+      name: siteConfig.name.en,
+      url: `${siteConfig.domain}/`,
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumb.map((b, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: b.name,
+        item: `${siteConfig.domain}${b.url}`,
+      })),
+    },
+  },
+];
+
+if (faqs.length > 0) {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a,
+      },
+    })),
+  });
+}
+---
+
+<!doctype html>
+<html lang={htmlLang[lang]}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
+    <script>
+      const w = window as any;
+      w.dataLayer = w.dataLayer || [];
+      function gtag(...args: any[]) { w.dataLayer.push(args); }
+      gtag('js', new Date());
+      gtag('config', 'G-HXM22WWPKP');
+    </script>
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#071a1c" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="icon" type="image/jpeg" href="/gallery/rajabhakti-park-1.jpg" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={htmlLang[lang]} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={heroImage} />
+    <meta property="og:image:alt" content={heroImageAlt} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Single-language topic page: self-referential hreflang only (no other-language version exists) -->
+    <link rel="alternate" hreflang={htmlLang[lang]} href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Sarabun:wght@300;400;500;600;700&family=Charm:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="grain">
+    <Header lang={lang} messages={messages} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} messages={messages} />
+
+    <script>
+      if ('serviceWorker' in navigator && location.protocol === 'https:') {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
