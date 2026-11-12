@@ -18,12 +18,16 @@ const sub: Record<Lang, string> = {
   zh: '为游客准备的详细独立指南',
 };
 
-// Show topic pages in the current language; for Chinese (no ZH topic pages yet) show the English guides.
-const links = topics.filter((t) => t.lang === lang || (lang === 'zh' && t.lang === 'en'));
+// Keep the existing homepage card footprint compact; the full directory lives separately.
+const links = topics.filter((t) => t.lang === lang).slice(0, 6);
+const directoryLabel: Record<Lang, string> = {
+  en: 'Explore all English travel guides',
+  th: 'ดูคู่มือท่องเที่ยวภาษาอังกฤษทั้งหมด',
+  zh: '查看全部英文旅行指南',
+};
 ---
 
-{links.length > 0 && (
-  <section class="py-16 bg-teakDeep text-ivory">
+<section id="topics" class="py-16 bg-teakDeep text-ivory">
     <div class="max-w-7xl mx-auto px-5">
       <p class="font-hand text-gold text-xl md:text-2xl">{heading[lang]}</p>
       <h2 class="font-display font-semibold text-2xl md:text-4xl text-ivory mt-2">{sub[lang]}</h2>
@@ -39,6 +43,6 @@ const links = topics.filter((t) => t.lang === lang || (lang === 'zh' && t.lang =
           </a>
         ))}
       </div>
+      <a href="/en/explore/" class="inline-flex mt-7 text-goldBright underline underline-offset-4 hover:text-white">{directoryLabel[lang]} →</a>
     </div>
-  </section>
-)}
+</section>

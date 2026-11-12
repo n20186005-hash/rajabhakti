@@ -12,7 +12,7 @@ const { lang, messages } = await getI18n(Astro.url);
 const slug = Astro.params.topic as string;
 const topic = getTopic(lang, slug);
 if (!topic) return Astro.redirect(`/${lang}/`);
-const mapsUrl = siteConfig.mapsUrl;
+const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
 ---
 
 <TopicLayout
@@ -39,9 +39,35 @@ const mapsUrl = siteConfig.mapsUrl;
       </nav>
       <h1 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-4 gold-text-bright">{topic.h1}</h1>
       <p class="mt-4 text-ivory/85 leading-relaxed">{topic.intro}</p>
+      {topic.management && <a href={mapsUrl} target="_blank" rel="noopener" class="inline-flex mt-5 rounded-full bg-gold px-5 py-2.5 font-semibold text-teak hover:bg-goldBright">View {topic.h1} on Google Maps ↗</a>}
       {topic.updated && <span class="chip text-goldBright border-gold/40 mt-5 inline-flex">{topic.updated}</span>}
     </div>
   </section>
+
+  {topic.management && (
+    <section class="py-14 bg-white text-ink">
+      <div class="max-w-4xl mx-auto px-5">
+        <p class="uppercase tracking-widest text-sm text-gold">About the attraction</p>
+        <h2 class="font-display text-2xl md:text-3xl text-teak mt-2 mb-4">About {topic.h1} and Who Manages It</h2>
+        <p class="leading-relaxed text-ink/85">{topic.management}</p>
+        <p class="mt-4 leading-relaxed text-ink/75">{topic.sections[0]?.body[0]}</p>
+      </div>
+    </section>
+  )}
+
+  {topic.management && (
+    <section class="bg-ivory py-12 text-ink">
+      <div class="max-w-4xl mx-auto px-5">
+        <h2 class="font-display text-2xl text-teak mb-5">Basic Visitor Information</h2>
+        <dl class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">Destination</dt><dd class="font-semibold mt-1">{topic.h1}</dd></div>
+          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">Area</dt><dd class="font-semibold mt-1">Hua Hin / Prachuap Khiri Khan, Thailand</dd></div>
+          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">Opening and admission</dt><dd class="mt-1">Confirm current access, operating hours and any fees with the destination operator</dd></div>
+          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">Navigation</dt><dd class="mt-1"><a class="text-teak underline underline-offset-4" href={mapsUrl} target="_blank" rel="noopener">Open the dedicated Google Maps search ↗</a></dd></div>
+        </dl>
+      </div>
+    </section>
+  )}
 
   <!-- Body sections -->
   <section class="py-14 bg-ivory text-ink">
@@ -65,6 +91,55 @@ const mapsUrl = siteConfig.mapsUrl;
                 <h3 class="font-display text-lg text-teak mb-2">{k.name}</h3>
                 <p class="text-sm text-ink/75 leading-relaxed">{k.contribution}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {topic.photoTips && (
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">Photography Spots and Observation Details</h2>
+          <ol class="grid sm:grid-cols-2 gap-4">
+            {topic.photoTips.map((tip, i) => (
+              <li class="bg-white/70 border border-gold/25 rounded-xl p-5"><span class="text-gold font-semibold">{String(i + 1).padStart(2, '0')}</span><p class="mt-2 text-ink/85">{tip}</p></li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {topic.routeSteps && (
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">Recommended Route: Step by Step</h2>
+          <ol class="space-y-4">
+            {topic.routeSteps.map((step, i) => (
+              <li class="flex gap-4 bg-white/70 rounded-xl border border-gold/20 p-5">
+                <span class="shrink-0 flex items-center justify-center rounded-full bg-teak text-goldBright w-9 h-9 font-bold">{i + 1}</span>
+                <p class="text-ink/85 leading-relaxed">{step}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {topic.management && (
+        <div class="rounded-xl bg-white/70 border border-gold/25 p-6">
+          <h2 class="font-display text-2xl text-teak">Where to Stay for This Visit</h2>
+          <p class="mt-3 text-ink/80 leading-relaxed">For a convenient base, compare accommodation around central Hua Hin for dining and rail connections, Nong Kae for access to the southern coast, or the Khao Takiab area for beach-focused stays. Check the exact address and journey to {topic.h1} before booking; no particular hotel is endorsed here.</p>
+          <h3 class="font-display text-lg text-teak mt-6">Visitor Feedback</h3>
+          <p class="mt-2 text-ink/80">For recent experiences, photographs and visitor observations, open the destination’s own Google Maps listing. Ratings and review counts change and are not copied onto this page.</p>
+          <a href={mapsUrl} target="_blank" rel="noopener" class="inline-flex mt-3 text-teak underline underline-offset-4">Read current visitor reviews ↗</a>
+        </div>
+      )}
+
+      {topic.images && topic.images.length > 0 && (
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">Photos of {topic.h1}</h2>
+          <div class="grid sm:grid-cols-2 gap-5">
+            {topic.images.map((photo) => (
+              <figure class="rounded-xl overflow-hidden bg-white border border-gold/20">
+                <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" class="w-full h-64 object-cover" />
+                <figcaption class="text-xs text-ink/65 px-4 py-3">{photo.alt}{photo.credit && ` · ${photo.credit}`}</figcaption>
+              </figure>
             ))}
           </div>
         </div>
@@ -109,7 +184,7 @@ const mapsUrl = siteConfig.mapsUrl;
           rel="noopener"
           class="inline-flex items-center gap-2 bg-gold text-teak font-semibold px-5 py-2.5 rounded-full hover:bg-goldBright transition-colors"
         >
-          View on Google Maps ↗
+          {topic.mapUrl ? `View ${topic.h1} on Google Maps ↗` : 'View on Google Maps ↗'}
         </a>
       </div>
     </div>

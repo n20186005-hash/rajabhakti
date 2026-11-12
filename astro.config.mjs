@@ -116,7 +116,7 @@ function pwaIcons() {
 // https://astro.build/config
 export default defineConfig({
   site: process.env.CURRENT_SITE_DOMAIN ? `https://${process.env.CURRENT_SITE_DOMAIN}` : 'https://rajabhakti.com',
-  output: 'hybrid',
+  output: 'static',
   adapter: cloudflare({
     imageService: 'passthrough',
     routes: { strategy: 'auto' },
@@ -130,7 +130,7 @@ export default defineConfig({
     },
   },
   image: {
-    remotePatterns: [{ protocol: 'https', hostname: '**' }],
+    remotePatterns: [],
     quality: 75,
     formats: ['avif', 'webp', 'jpeg'],
   },

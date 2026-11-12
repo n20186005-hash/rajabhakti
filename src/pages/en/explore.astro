@@ -1,0 +1,50 @@
+---
+import { topics } from '../../i18n/topics';
+import { getI18n } from '../../i18n/ui';
+import TopicLayout from '../../layouts/TopicLayout.astro';
+
+const { messages } = await getI18n(new URL('/en/', Astro.url));
+const English = topics.filter((t) => t.lang === 'en');
+const nearby = English.filter((t) => t.slug.startsWith('nearby-'));
+const practical = English.filter((t) => !t.slug.startsWith('nearby-'));
+const sections = [
+  { heading: 'Nearby Hua Hin attractions', items: nearby },
+  { heading: 'History, transport and practical guides', items: practical },
+];
+---
+
+<TopicLayout
+  lang="en"
+  title="Hua Hin Attractions & Rajabhakti Park Travel Guides"
+  description="Browse dedicated Hua Hin attraction guides, Rajabhakti Park history, routes, transport, photography and practical trip planning."
+  path="/en/explore/"
+  faqs={[]}
+  breadcrumb={[{ name: 'Home', url: '/en/' }, { name: 'Explore Hua Hin', url: '/en/explore/' }]}
+  messages={messages}
+>
+  <section class="pt-28 pb-16 bg-teakDeep text-ivory">
+    <div class="max-w-6xl mx-auto px-5">
+      <a href="/en/" class="text-goldBright text-sm">← Rajabhakti Park</a>
+      <h1 class="font-display text-3xl md:text-5xl mt-5 text-goldBright">Explore Hua Hin and Rajabhakti Park</h1>
+      <p class="mt-4 max-w-3xl text-ivory/85 leading-relaxed">Plan meaningful stops around the seven kings' monument. Each attraction guide explains what makes the place distinct, how to pair it with Rajabhakti Park and what to check before travelling. These guides are currently in English.</p>
+    </div>
+  </section>
+  <div class="bg-ivory py-14 text-ink">
+    <div class="max-w-6xl mx-auto px-5 space-y-14">
+      {sections.map((section) => (
+        <section>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-6">{section.heading}</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {section.items.map((t) => (
+              <a href={`/en/${t.slug}/`} class="rounded-xl border border-gold/30 bg-white/70 p-5 hover:border-gold transition-colors">
+                <h3 class="font-display text-lg text-teak">{t.h1}</h3>
+                <p class="text-sm mt-2 text-ink/75">{t.description}</p>
+                <span class="text-gold text-sm mt-4 inline-block">Read guide →</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</TopicLayout>

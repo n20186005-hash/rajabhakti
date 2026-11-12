@@ -1,4 +1,5 @@
 import type { Lang } from './ui';
+import { expansionTopics } from './expansions';
 
 export interface TopicKing {
   name: string;
@@ -30,6 +31,11 @@ export interface TopicContent {
   breadcrumb: { name: string; url: string }[];
   related: TopicLink[];
   updated?: string;
+  mapUrl?: string;
+  management?: string;
+  photoTips?: string[];
+  images?: { src: string; alt: string; credit?: string }[];
+  routeSteps?: string[];
 }
 
 export const topics: TopicContent[] = [
@@ -422,6 +428,7 @@ export const topics: TopicContent[] = [
     ],
     updated: 'เนื้อหาประวัติศาสตร์ปรับปรุงตุลาคม 2026',
   },
+  ...expansionTopics,
 ];
 
 export const getTopic = (lang: Lang, slug: string): TopicContent | undefined =>
