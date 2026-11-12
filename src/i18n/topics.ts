@@ -36,6 +36,17 @@ export interface TopicContent {
   photoTips?: string[];
   images?: { src: string; alt: string; credit?: string }[];
   routeSteps?: string[];
+  expandedFacts?: {
+    category: string;
+    locality: string;
+    opening: string;
+    admission: string;
+    transport: string;
+    history: string;
+    character: string;
+    observation: string;
+    visitDuration: string;
+  };
 }
 
 export const topics: TopicContent[] = [
