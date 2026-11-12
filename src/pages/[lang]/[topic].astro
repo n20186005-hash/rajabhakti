@@ -1,5 +1,5 @@
 ---
-import { getI18n } from '../../i18n/ui';
+import { getI18n, languagesList, type Lang } from '../../i18n/ui';
 import { topics, getTopic } from '../../i18n/topics';
 import TopicLayout from '../../layouts/TopicLayout.astro';
 import { siteConfig } from '../../config';
@@ -13,6 +13,13 @@ const slug = Astro.params.topic as string;
 const topic = getTopic(lang, slug);
 if (!topic) return Astro.redirect(`/${lang}/`);
 const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
+const alternateLanguages=languagesList.filter(l=>getTopic(l,slug)).map(l=>({lang:l,path:`/${l}/${slug}/`}));
+const labels:Record<Lang,Record<string,string>>={
+en:{map:'View on Google Maps',about:'About the attraction',manager:'About the attraction and who manages it',basic:'Basic Visitor Information',destination:'Destination',area:'Area',hours:'Opening and admission',hoursText:'Confirm current hours, admission and access with the destination operator',navigation:'Navigation',navLink:'Open dedicated Google Maps search',photo:'Photography Spots and Observation Details',route:'Recommended Route: Step by Step',stay:'Where to Stay for This Visit',stayText:'Compare stays in central Hua Hin for dining and rail connections, Nong Kae for the southern coast, or Khao Takiab for beaches. Confirm the address and journey before booking.',feedback:'Visitor Feedback',feedbackText:'For recent experiences and visitor observations, open this destination’s own Google Maps listing. Ratings change and are not reproduced here.',reviews:'Read current visitor reviews',photos:'Photos of',faq:'Frequently asked questions',related:'Related guides',kings:'The seven kings at a glance'},
+th:{map:'ดูแผนที่ Google Maps',about:'เกี่ยวกับสถานที่',manager:'เกี่ยวกับสถานที่และหน่วยงานที่ดูแล',basic:'ข้อมูลพื้นฐานสำหรับผู้เยี่ยมชม',destination:'สถานที่',area:'พื้นที่',hours:'เวลาเปิดและค่าเข้า',hoursText:'ตรวจสอบเวลาเปิด ค่าเข้า และการเข้าพื้นที่กับผู้ดูแลสถานที่',navigation:'การนำทาง',navLink:'เปิดแผนที่ Google Maps เฉพาะสถานที่',photo:'จุดถ่ายภาพและรายละเอียดน่าสังเกต',route:'เส้นทางแนะนำทีละขั้น',stay:'ที่พักสำหรับทริปนี้',stayText:'เปรียบเทียบที่พักในตัวเมืองหัวหินเพื่อร้านอาหารและสถานีรถไฟ ย่านหนองแกสำหรับชายฝั่งตอนใต้ หรือเขาตะเกียบสำหรับหาดทราย ตรวจสอบที่อยู่และเส้นทางก่อนจอง',feedback:'ความคิดเห็นผู้เยี่ยมชม',feedbackText:'อ่านประสบการณ์และภาพถ่ายล่าสุดจากรายการ Google Maps ของสถานที่นี้โดยตรง คะแนนและจำนวนรีวิวเปลี่ยนแปลงได้',reviews:'อ่านรีวิวล่าสุด',photos:'ภาพถ่าย',faq:'คำถามที่พบบ่อย',related:'คู่มือที่เกี่ยวข้อง',kings:'เจ็ดบูรพกษัตริย์โดยสรุป'},
+zh:{map:'在 Google 地图查看位置',about:'关于景点',manager:'景点介绍与管理单位',basic:'游客基本信息',destination:'景点名称',area:'所在区域',hours:'开放与门票',hoursText:'开放时间、收费与通行安排请向景点管理方核实',navigation:'地图导航',navLink:'打开景点专属 Google 地图',photo:'拍摄机位与观察重点',route:'推荐路线：分步游览',stay:'附近住宿建议',stayText:'可根据行程选择华欣市中心（餐饮与铁路方便）、Nong Kae（前往南部海岸便利）或筷子山一带（靠近海滩）的住宿。预订前核对地址及交通。',feedback:'游客评价',feedbackText:'可在此景点自身的 Google 地图列表查看近期游览体验和照片。评分与评价数量会变化，本站不复制实时数据。',reviews:'查看近期游客评价',photos:'景点实景照片',faq:'常见问题',related:'相关攻略',kings:'七大泰王简介'}
+};
+const u=labels[lang];
 ---
 
 <TopicLayout
@@ -23,6 +30,7 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
   faqs={topic.faq}
   breadcrumb={topic.breadcrumb}
   messages={messages}
+  alternateLanguages={alternateLanguages}
 >
   <!-- Page header -->
   <section class="pt-28 pb-10 bg-teakDeep text-ivory">
@@ -39,7 +47,7 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
       </nav>
       <h1 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-4 gold-text-bright">{topic.h1}</h1>
       <p class="mt-4 text-ivory/85 leading-relaxed">{topic.intro}</p>
-      {topic.management && <a href={mapsUrl} target="_blank" rel="noopener" class="inline-flex mt-5 rounded-full bg-gold px-5 py-2.5 font-semibold text-teak hover:bg-goldBright">View {topic.h1} on Google Maps ↗</a>}
+      {topic.management && <a href={mapsUrl} target="_blank" rel="noopener" class="inline-flex mt-5 rounded-full bg-gold px-5 py-2.5 font-semibold text-teak hover:bg-goldBright">{u.map}：{topic.h1} ↗</a>}
       {topic.updated && <span class="chip text-goldBright border-gold/40 mt-5 inline-flex">{topic.updated}</span>}
     </div>
   </section>
@@ -47,8 +55,8 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
   {topic.management && (
     <section class="py-14 bg-white text-ink">
       <div class="max-w-4xl mx-auto px-5">
-        <p class="uppercase tracking-widest text-sm text-gold">About the attraction</p>
-        <h2 class="font-display text-2xl md:text-3xl text-teak mt-2 mb-4">About {topic.h1} and Who Manages It</h2>
+        <p class="uppercase tracking-widest text-sm text-gold">{u.about}</p>
+        <h2 class="font-display text-2xl md:text-3xl text-teak mt-2 mb-4">{u.manager}：{topic.h1}</h2>
         <p class="leading-relaxed text-ink/85">{topic.management}</p>
         <p class="mt-4 leading-relaxed text-ink/75">{topic.sections[0]?.body[0]}</p>
       </div>
@@ -58,12 +66,12 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
   {topic.management && (
     <section class="bg-ivory py-12 text-ink">
       <div class="max-w-4xl mx-auto px-5">
-        <h2 class="font-display text-2xl text-teak mb-5">Basic Visitor Information</h2>
+        <h2 class="font-display text-2xl text-teak mb-5">{u.basic}</h2>
         <dl class="grid sm:grid-cols-2 gap-4">
-          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">Destination</dt><dd class="font-semibold mt-1">{topic.h1}</dd></div>
-          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">Area</dt><dd class="font-semibold mt-1">Hua Hin / Prachuap Khiri Khan, Thailand</dd></div>
-          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">Opening and admission</dt><dd class="mt-1">Confirm current access, operating hours and any fees with the destination operator</dd></div>
-          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">Navigation</dt><dd class="mt-1"><a class="text-teak underline underline-offset-4" href={mapsUrl} target="_blank" rel="noopener">Open the dedicated Google Maps search ↗</a></dd></div>
+          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">{u.destination}</dt><dd class="font-semibold mt-1">{topic.h1}</dd></div>
+          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">{u.area}</dt><dd class="font-semibold mt-1">{lang==='th'?'หัวหิน / ประจวบคีรีขันธ์ ประเทศไทย':lang==='zh'?'泰国班武里府／华欣':'Hua Hin / Prachuap Khiri Khan, Thailand'}</dd></div>
+          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">{u.hours}</dt><dd class="mt-1">{u.hoursText}</dd></div>
+          <div class="rounded-xl bg-white/80 border border-gold/25 p-5"><dt class="text-sm text-ink/60">{u.navigation}</dt><dd class="mt-1"><a class="text-teak underline underline-offset-4" href={mapsUrl} target="_blank" rel="noopener">{u.navLink} ↗</a></dd></div>
         </dl>
       </div>
     </section>
@@ -83,7 +91,7 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
 
       {topic.kings && (
         <div>
-          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">The seven kings at a glance</h2>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">{u.kings}</h2>
           <div class="grid sm:grid-cols-2 gap-4">
             {topic.kings.map((k) => (
               <div class="rounded-xl border border-gold/25 bg-white/50 p-5">
@@ -98,7 +106,7 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
 
       {topic.photoTips && (
         <div>
-          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">Photography Spots and Observation Details</h2>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">{u.photo}</h2>
           <ol class="grid sm:grid-cols-2 gap-4">
             {topic.photoTips.map((tip, i) => (
               <li class="bg-white/70 border border-gold/25 rounded-xl p-5"><span class="text-gold font-semibold">{String(i + 1).padStart(2, '0')}</span><p class="mt-2 text-ink/85">{tip}</p></li>
@@ -109,7 +117,7 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
 
       {topic.routeSteps && (
         <div>
-          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">Recommended Route: Step by Step</h2>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">{u.route}</h2>
           <ol class="space-y-4">
             {topic.routeSteps.map((step, i) => (
               <li class="flex gap-4 bg-white/70 rounded-xl border border-gold/20 p-5">
@@ -123,17 +131,17 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
 
       {topic.management && (
         <div class="rounded-xl bg-white/70 border border-gold/25 p-6">
-          <h2 class="font-display text-2xl text-teak">Where to Stay for This Visit</h2>
-          <p class="mt-3 text-ink/80 leading-relaxed">For a convenient base, compare accommodation around central Hua Hin for dining and rail connections, Nong Kae for access to the southern coast, or the Khao Takiab area for beach-focused stays. Check the exact address and journey to {topic.h1} before booking; no particular hotel is endorsed here.</p>
-          <h3 class="font-display text-lg text-teak mt-6">Visitor Feedback</h3>
-          <p class="mt-2 text-ink/80">For recent experiences, photographs and visitor observations, open the destination’s own Google Maps listing. Ratings and review counts change and are not copied onto this page.</p>
-          <a href={mapsUrl} target="_blank" rel="noopener" class="inline-flex mt-3 text-teak underline underline-offset-4">Read current visitor reviews ↗</a>
+          <h2 class="font-display text-2xl text-teak">{u.stay}</h2>
+          <p class="mt-3 text-ink/80 leading-relaxed">{u.stayText}</p>
+          <h3 class="font-display text-lg text-teak mt-6">{u.feedback}</h3>
+          <p class="mt-2 text-ink/80">{u.feedbackText}</p>
+          <a href={mapsUrl} target="_blank" rel="noopener" class="inline-flex mt-3 text-teak underline underline-offset-4">{u.reviews} ↗</a>
         </div>
       )}
 
       {topic.images && topic.images.length > 0 && (
         <div>
-          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">Photos of {topic.h1}</h2>
+          <h2 class="font-display text-2xl md:text-3xl text-teak mb-5">{u.photos}：{topic.h1}</h2>
           <div class="grid sm:grid-cols-2 gap-5">
             {topic.images.map((photo) => (
               <figure class="rounded-xl overflow-hidden bg-white border border-gold/20">
@@ -150,7 +158,7 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
   <!-- FAQ -->
   <section class="py-14 bg-teakDeep text-ivory">
     <div class="max-w-3xl mx-auto px-5">
-      <h2 class="font-display text-2xl md:text-3xl text-goldBright mb-6">Frequently asked questions</h2>
+      <h2 class="font-display text-2xl md:text-3xl text-goldBright mb-6">{u.faq}</h2>
       <div class="space-y-3">
         {topic.faq.map((f) => (
           <details class="group rounded-xl border border-gold/25 bg-teak/40 p-4 open:bg-teak/60">
@@ -168,7 +176,7 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
   <!-- Related links -->
   <section class="py-14 bg-ivory text-ink">
     <div class="max-w-4xl mx-auto px-5">
-      <h2 class="font-display text-2xl text-teak mb-5">Related guides</h2>
+      <h2 class="font-display text-2xl text-teak mb-5">{u.related}</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {topic.related.map((r) => (
           <a href={r.url} class="rounded-xl border border-gold/30 bg-white/50 p-5 hover:border-gold/60 transition-colors">
@@ -184,7 +192,7 @@ const mapsUrl = topic.mapUrl ?? siteConfig.mapsUrl;
           rel="noopener"
           class="inline-flex items-center gap-2 bg-gold text-teak font-semibold px-5 py-2.5 rounded-full hover:bg-goldBright transition-colors"
         >
-          {topic.mapUrl ? `View ${topic.h1} on Google Maps ↗` : 'View on Google Maps ↗'}
+          {u.map}：{topic.h1} ↗
         </a>
       </div>
     </div>

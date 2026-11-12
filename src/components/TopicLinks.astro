@@ -22,8 +22,8 @@ const sub: Record<Lang, string> = {
 const links = topics.filter((t) => t.lang === lang).slice(0, 6);
 const directoryLabel: Record<Lang, string> = {
   en: 'Explore all English travel guides',
-  th: 'ดูคู่มือท่องเที่ยวภาษาอังกฤษทั้งหมด',
-  zh: '查看全部英文旅行指南',
+  th: 'ดูคู่มือท่องเที่ยวทั้งหมด',
+  zh: '查看全部旅行指南',
 };
 ---
 
@@ -43,6 +43,6 @@ const directoryLabel: Record<Lang, string> = {
           </a>
         ))}
       </div>
-      <a href="/en/explore/" class="inline-flex mt-7 text-goldBright underline underline-offset-4 hover:text-white">{directoryLabel[lang]} →</a>
+      <a href={`/${lang}/explore/`} class="inline-flex mt-7 text-goldBright underline underline-offset-4 hover:text-white">{directoryLabel[lang]} →</a>
     </div>
 </section>

@@ -19,7 +19,7 @@ export interface TopicLink {
 }
 
 export interface TopicContent {
-  lang: 'en' | 'th';
+  lang: 'en' | 'th' | 'zh';
   slug: string;
   title: string;
   description: string;

@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from '../config';
 import { languages, languagesList, type Lang } from '../i18n/ui';
+import { getTopic } from '../i18n/topics';
 
 interface Props {
   lang: Lang;
@@ -24,7 +25,8 @@ const navItems = [
 const isHomepage = Astro.url.pathname === `/${lang}/`;
 const navHref = (fragment: string) => isHomepage ? fragment : `/${lang}/${fragment}`;
 
-const switchTo = (target: Lang) => `/${target}/`;
+const suffix = Astro.url.pathname.replace(/^\/(en|th|zh)\//,'').replace(/\/$/,'');
+const switchTo = (target: Lang) => suffix === 'explore' ? `/${target}/explore/` : suffix && getTopic(target,suffix) ? `/${target}/${suffix}/` : `/${target}/`;
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 bg-teak/90 backdrop-blur-md border-b border-gold/20">

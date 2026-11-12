@@ -1,4 +1,5 @@
 import type { TopicContent } from './topics';
+import { th, zh, type Translated } from './expansion-locales';
 
 /** New, destination-specific English guides. Each route is an original topic, not a translation. */
 type Guide = {
@@ -295,7 +296,7 @@ const guides: Guide[] = [
   },
 ];
 
-export const expansionTopics: TopicContent[] = guides.map((g, index) => {
+const englishExpansionTopics: TopicContent[] = guides.map((g, index) => {
   const location = g.place ? search(g.place) : park;
   const nearby = Boolean(g.place);
   const related = [
@@ -340,3 +341,30 @@ export const expansionTopics: TopicContent[] = guides.map((g, index) => {
     ],
   };
 });
+
+const labels = {
+ th:{about:'เกี่ยวกับ',see:'สิ่งที่น่าชมและกิจกรรม',route:'เส้นทางแนะนำ',tip:'เตรียมตัวก่อนเดินทาง',location:'ตำแหน่งและการนำทาง',sources:'ข้อมูลและแหล่งอ้างอิง',same:'เป็นสถานที่เดียวกับอุทยานราชภักดิ์หรือไม่?',plan:'ควรจัดเส้นทางอย่างไร?',check:'ควรตรวจสอบอะไรบ้างก่อนออกเดินทาง?',home:'หน้าแรก',nearby:'ที่เที่ยวใกล้เคียง',guides:'คู่มือท่องเที่ยว',separate:'สถานที่นี้แยกจากอุทยานราชภักดิ์ โปรดตรวจสอบเวลาเปิดและข้อกำหนดการเข้าพื้นที่กับผู้ดูแลสถานที่',park:'สำหรับอุทยานราชภักดิ์ให้ปฏิบัติตามประกาศทางเข้าและคำแนะนำเจ้าหน้าที่',refer:'ตรวจสอบการเปิดพื้นที่กับผู้ดูแลสถานที่ และข้อมูลท่องเที่ยวภูมิภาคจากการท่องเที่ยวแห่งประเทศไทย https://www.tourismthailand.org/',notSame:'ไม่ใช่ สถานที่นี้เป็นอีกจุดหมายหนึ่ง ต้องใช้หมุดแผนที่เฉพาะ',isSame:'คู่มือนี้กล่าวถึงอุทยานราชภักดิ์โดยตรง',manager:'สถานที่นี้มีหน่วยงานหรือผู้ดำเนินการของตนเอง แยกจากการดูแลอุทยานราชภักดิ์โดยกองทัพบกไทย โปรดปฏิบัติตามป้ายและติดต่อผู้ดูแลก่อนเข้าพื้นที่พิเศษหรือถ่ายทำ',army:'อุทยานราชภักดิ์จัดสร้างและดูแลโดยกองทัพบกไทย เพื่อรำลึกถึงบูรพกษัตริย์เจ็ดพระองค์ เจ้าหน้าที่และประกาศหน้างานเป็นผู้กำหนดการเข้าชมเมื่อมีพิธีการ'},
+ zh:{about:'关于',see:'值得观察与体验',route:'推荐游览路线',tip:'出发前须知',location:'位置与导航',sources:'资料来源与延伸阅读',same:'这里与七王纪念园是同一地点吗？',plan:'如何安排行程？',check:'出发前应该核对什么？',home:'首页',nearby:'周边景点',guides:'出行攻略',separate:'此景点独立于七王纪念园；出发前请向当地管理方核对开放、收费与通行规定。',park:'纪念园的开放时间、安检及通行安排以入口公告和工作人员指示为准。',refer:'请以景点运营方或当地游客信息核实最新条件；泰国国家旅游局提供华欣区域旅游参考：https://www.tourismthailand.org/',notSame:'不是。这是华欣地区的独立地点，导航时请使用对应景点的地图定位。',isSame:'本文介绍七王纪念园本身及其游客体验。',manager:'此地点由自身的场地运营方或当地管理机构负责，并非七王纪念园的附属设施。请遵守现场规定，特殊进入或商业拍摄先向管理方咨询。',army:'七王纪念园由泰国皇家陆军筹建及管理，纪念泰国历史上七位重要君主。园区可能举行纪念和军事仪式，实际通行安排以工作人员及现场公告为准。'},
+} as const;
+const specificManagement: Record<string, {th:string;zh:string}> = {
+ 'nearby-hua-hin-railway-station':{th:'สถานีรถไฟหัวหินอยู่ในระบบรถไฟของการรถไฟแห่งประเทศไทย การเข้าใช้ชานชาลาและกฎความปลอดภัยให้ถือคำสั่งเจ้าหน้าที่รถไฟเป็นหลัก',zh:'华欣火车站属于泰国国家铁路系统，由泰国国家铁路局运营。参观时应优先遵守铁路安全与站台进入规定。'},
+ 'nearby-pranburi-forest-park':{th:'วนอุทยานปราณบุรีอยู่ภายใต้การดูแลของกรมอุทยานแห่งชาติ สัตว์ป่า และพันธุ์พืช การเปิดเส้นทางและบริการเป็นไปตามหน่วยงานป่าไม้',zh:'攀武里森林公园由泰国国家公园、野生动物和植物保护厅管理，步道与访客设施的安排独立于七王纪念园。'},
+ 'nearby-khao-sam-roi-yot':{th:'อุทยานแห่งชาติเขาสามร้อยยอดบริหารโดยกรมอุทยานแห่งชาติ สัตว์ป่า และพันธุ์พืช ค่าธรรมเนียมและเส้นทางขึ้นกับประกาศอุทยาน',zh:'三百峰国家公园由泰国国家公园、野生动物和植物保护厅管理，门票、步道及关闭事项由国家公园机构决定。'},
+ 'nearby-phraya-nakhon-cave':{th:'ถ้ำพระยานครอยู่ภายในอุทยานแห่งชาติเขาสามร้อยยอด ซึ่งบริหารโดยกรมอุทยานแห่งชาติ สัตว์ป่า และพันธุ์พืช ให้ปฏิบัติตามเจ้าหน้าที่จุดเริ่มเส้นทาง',zh:'帕亚那空洞位于三百峰国家公园内，归泰国国家公园、野生动物和植物保护厅管理，须遵守指定登山入口的管理规定。'},
+ 'nearby-suan-son-pradiphat-beach':{th:'หาดสวนสนประดิพัทธ์เกี่ยวข้องกับศูนย์การทหารราบ กองทัพบก การเข้าใช้ชายหาดและสิ่งอำนวยความสะดวกให้ยึดประกาศของผู้ดูแลพื้นที่',zh:'松林海滩与泰国皇家陆军步兵中心有关，游客通行与设施使用应以海滩现场管理单位的规定为准。'},
+ 'nearby-sirinath-rajini-mangrove-centre':{th:'ศูนย์สิรินาถราชินีเป็นพื้นที่เรียนรู้และฟื้นฟูป่าชายเลนในปราณบุรี มีการจัดการเข้าชมแยกจากอุทยานราชภักดิ์',zh:'Sirinath Rajini 中心是攀武里地区的红树林教育与修复设施，访客接待安排独立于七王纪念园。'},
+};
+function translateTopic(original:TopicContent, d:Translated, lang:'th'|'zh'):TopicContent {
+ const x=labels[lang], nearby=original.slug.startsWith('nearby-');
+ const sourceText=original.sections[5]?.body?.[0] ?? x.refer;
+ const management=specificManagement[original.slug]?.[lang] ?? (nearby?x.manager:x.army);
+ return {...original,lang,h1:d.name,title:`${d.name} | ${lang==='th'?'คู่มือเที่ยวหัวหินและอุทยานราชภักดิ์':'华欣与七王纪念园旅行指南'}`,
+ description:`${d.name}：${d.intro} ${d.route}`,intro:d.intro,
+ sections:[{heading:`${x.about}${lang==='th'?' ':''}${d.name}`,body:[d.intro]},{heading:x.see,body:[d.see]},{heading:x.route,body:[d.route]},{heading:x.tip,body:[d.tip,nearby?x.separate:x.park]},{heading:x.location,body:[`${d.name}: ${original.mapUrl}`,nearby?x.notSame:x.isSame]},{heading:x.sources,body:[sourceText.match(/https?:\/\/\S+/)?.[0] ?? x.refer]}],
+ management,faq:[{q:x.same,a:nearby?x.notSame:x.isSame},{q:x.plan,a:d.route},{q:x.check,a:d.tip}],
+ breadcrumb:[{name:x.home,url:`/${lang}/`},{name:nearby?x.nearby:x.guides,url:`/${lang}/explore/`},{name:d.name,url:`/${lang}/${original.slug}/`}],
+ related:[{title:lang==='th'?'มารยาทในอุทยาน':'园区管理与礼仪',url:`/${lang}/park-management-and-etiquette/`,desc:x.park},{title:lang==='th'?'ประวัติศาสตร์เจ็ดบูรพกษัตริย์':'七王历史时间线',url:`/${lang}/seven-kings-history-timeline/`,desc:x.see},{title:lang==='th'?'การเดินทางจากสถานีหัวหิน':'从华欣火车站出发',url:`/${lang}/from-hua-hin-station/`,desc:x.route}],
+ updated:lang==='th'?'ตรวจทานเนื้อหา พฤศจิกายน 2569':'内容审校：2026 年 11 月',
+ photoTips:[d.see,d.tip],routeSteps:[d.route,d.see,d.tip],images:original.images?.map(i=>({...i,alt:d.name}))};
+}
+export const expansionTopics: TopicContent[] = [...englishExpansionTopics,...englishExpansionTopics.map(t=>translateTopic(t,th[t.slug],'th')),...englishExpansionTopics.map(t=>translateTopic(t,zh[t.slug],'zh'))];

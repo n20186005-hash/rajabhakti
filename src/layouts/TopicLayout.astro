@@ -21,8 +21,9 @@ interface Props {
   faqs: FaqItem[];
   breadcrumb: Crumb[];
   messages: any;
+  alternateLanguages?: {lang: Lang; path: string}[];
 }
-const { lang, title, description, path, faqs, breadcrumb, messages } = Astro.props;
+const { lang, title, description, path, faqs, breadcrumb, messages, alternateLanguages } = Astro.props;
 const canonical = `${siteConfig.domain}${path}`;
 const heroImage = `${siteConfig.domain}/gallery/rajabhakti-park-1.jpg`;
 const heroImageAlt = `${siteConfig.name.en} (${siteConfig.name.th}) — ${siteConfig.addressParts.addressLocality}, Thailand`;
@@ -102,9 +103,8 @@ if (faqs.length > 0) {
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Single-language topic page: self-referential hreflang only (no other-language version exists) -->
-    <link rel="alternate" hreflang={htmlLang[lang]} href={canonical} />
-    <link rel="alternate" hreflang="x-default" href={canonical} />
+    {(alternateLanguages ?? [{lang,path}]).map(a=><link rel="alternate" hreflang={htmlLang[a.lang]} href={`${siteConfig.domain}${a.path}`} />)}
+    <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}${alternateLanguages?.find(a=>a.lang==='en')?.path ?? path}`} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
